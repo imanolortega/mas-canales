@@ -5,11 +5,54 @@
 .main {
   min-height: 100vh;
   padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+
+  .right {
+    display: grid;
+    place-content: center;
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .channels {
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      .channel {
+        width: 100%;
+        display: block;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #555;
+        }
+
+        &:active {
+          background-color: #222;
+        }
+      }
+    }
+  }
+
+  .center {
+    display: grid;
+    place-content: center;
+  }
+
+  .left {
+    width: 100%;
+  }
 }
 
 .footer {
@@ -116,13 +159,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
