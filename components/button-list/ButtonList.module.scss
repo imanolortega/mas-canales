@@ -1,0 +1,38 @@
+.channels {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border-radius: 0.4rem;
+  overflow-y: scroll;
+  max-height: 500px;
+
+  .channel {
+    width: 100%;
+    display: block;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #555;
+    }
+
+    &:active {
+      background-color: #222;
+    }
+
+    &:first-child {
+      border-top-left-radius: 0.4rem;
+      border-top-right-radius: 0.4rem;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0.4rem;
+      border-bottom-right-radius: 0.4rem;
+    }
+  }
+}

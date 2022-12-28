@@ -1,0 +1,23 @@
+import { Dispatch, SetStateAction } from 'react';
+import styles from './ButtonList.module.scss'
+
+export interface ButtonList {
+  channels: Array<{
+    id: string;
+    name: string;
+  }>;
+  onHandleChannel: Dispatch<SetStateAction<{ id: string; name: string; }>>;
+}
+
+export default function ButtonList({ channels, onHandleChannel }: ButtonList) {
+  return (
+    <div className={styles['channels']}>
+      {channels.map((channel) => (
+        <button
+          key={channel.name}
+          className={styles['channel']}
+          onClick={() => onHandleChannel(channel)}>{channel.name}</button>
+      ))}
+    </div>
+  );
+}
