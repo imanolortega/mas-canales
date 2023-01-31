@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Dispatch, SetStateAction } from 'react';
 import styles from './Sidebar.module.scss';
 
-import ButtonList from '../button-list/button-list';
-
+import ArrowLeft from 'components/icons/arrow-left';
+import ArrowRight from 'components/icons/arrow-right';
+import ButtonList from 'components/button-list/button-list';
 export interface Sidebar {
   className?: string;
   channels: Array<{
@@ -28,18 +29,24 @@ export default function Sidebar({
     setOpen(!isOpen);
   }
   return (
-    <div className={className}>
-      <button onClick={toggle}>
-        <button>{isOpen ? 'ArrowUp' : 'ArrowDown'}</button>
-      </button>
-      <aside className={`${styles['sidebar']} ${styles[`${!isOpen && 'closed'}`]}`}>
-        <h3 className={styles['title']}>Canales</h3>
-          <ButtonList
-            channels={channels}
-            channelSelected={channelSelected}
-            onHandleChannel={onHandleChannel}
-          />
+    <div className={`${styles['sidebar']} ${className}`}>
+      <aside className={`${styles['content']} ${styles[`${!isOpen && 'closed'}`]}`}>
+        {
+          isOpen && (
+            <>
+              <h3 className={styles['title']}>Canales</h3>
+              <ButtonList
+                channels={channels}
+                channelSelected={channelSelected}
+                onHandleChannel={onHandleChannel}
+              />
+            </>
+          )
+        }
       </aside>
+      <button className={styles['btn']} onClick={toggle}>
+        {isOpen ? <ArrowLeft /> : <ArrowRight />}
+      </button>
     </div>
   );
 }

@@ -1,11 +1,39 @@
 @import 'styles/config/_colors.scss';
 
 .sidebar {
-  background: $site-background;
-  width: 300px;
-  transition: width 0.5s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 1.5rem;
 
-  &.closed {
-    width: 50px;
+  .btn {
+    background: $btn-background;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    cursor: pointer;
+    bottom: 4rem;
+    position: absolute;
+  }
+
+  .content {
+    background: $site-background;
+    width: 300px;
+    transition: width 0.5s ease;
+
+    &.closed {
+      width: 45px;
+    }
+  }
+
+  .title {
+    font-size: 1.3rem;
+    text-align: center;
+    color: $snow;
   }
 }

@@ -13,7 +13,7 @@ const channels = [
     name: 'Todo Noticias',
   },
   {
-    id: 'SDDNQRJK1rE',
+    id: 'hVE2rKvixd4',
     name: 'C5N',
   },
   {
@@ -51,6 +51,10 @@ const channels = [
   {
     id: 'wGB-c2S5XYw',
     name: 'IP Noticias'
+  },
+  {
+    id: 'O9mOtdZ-nSk',
+    name: 'Euronews'
   }
 ]
 
