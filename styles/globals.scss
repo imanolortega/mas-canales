@@ -1,3 +1,5 @@
+@import 'styles/config/_colors.scss';
+
 html,
 body {
   padding: 0;
@@ -20,7 +22,7 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: #160e32;
+    color: $snow;
+    background: $site-background;
   }
 }

@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import ButtonList from '../components/button-list/button-list'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
-import TwitchChat from '../components/twitch-chat/twitch-chat'
+import styles from './Index.module.scss'
+
+import Sidebar from '../components/sidebar/sidebar'
 import YouTubeVideo from '../components/youtube-video/youtube-video'
+import HeadComponent from '../sections/head'
+
+// import TwitchChat from '../components/twitch-chat/twitch-chat'
 
 const channels = [
   {
@@ -12,7 +13,7 @@ const channels = [
     name: 'Todo Noticias',
   },
   {
-    id: 'BUxXxVh7XhI',
+    id: 'SDDNQRJK1rE',
     name: 'C5N',
   },
   {
@@ -20,15 +21,11 @@ const channels = [
     name: 'Crónica TV',
   },
   {
-    id: 'IOSVORAZnRY',
+    id: '6_d4yYpCqsk',
     name: 'La Nación +',
   },
   {
-    id: '9yfrm0_zC6E',
-    name: 'TV Pública',
-  },
-  {
-    id: 'OLmMmftzmf0',
+    id: 'C2tMrZ6_xGE',
     name: 'Canal 26'
   },
   {
@@ -44,8 +41,16 @@ const channels = [
     name: 'Canal de la Ciudad de Buenos Aires'
   },
   {
-    id: 'sQ9a4Ipr474',
+    id: 'SWMaoqZYDXo',
     name: 'Telefé'
+  },
+  {
+    id: 'rI5aucf1vYY',
+    name: 'Telefé Córdoba'
+  },
+  {
+    id: 'wGB-c2S5XYw',
+    name: 'IP Noticias'
   }
 ]
 
@@ -55,42 +60,24 @@ export default function Home() {
   const [channelSelected, setChannelSelected] = useState(channels[0])
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Más Canales</title>
-        <meta name="description" content="Más canales de YouTube" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadComponent />
 
       <main className={styles['main']}>
-        <div className={styles['right']}>
-          <h3 className={styles['title']}>Canales</h3>
-          <ButtonList
-            channels={channels}
-            onHandleChannel={setChannelSelected}
-          />
+        <Sidebar
+          channels={channels}
+          channelSelected={channelSelected}
+          onHandleChannel={setChannelSelected}
+        />
+
+        <div className={styles['video-container']}>
+          <YouTubeVideo
+            videoId={channelSelected.id} />
         </div>
 
-        <div className={styles['center']}>
-          <YouTubeVideo videoId={channelSelected.id} />
-        </div>
-
-        <div className={styles['left']} >
+        {/* <div className={styles['left']} >
           <TwitchChat channel='tinoburgos' />
-        </div>
+        </div> */}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }

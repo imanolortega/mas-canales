@@ -1,0 +1,11 @@
+@import 'styles/config/_colors.scss';
+
+.sidebar {
+  background: $site-background;
+  width: 300px;
+  transition: width 0.5s ease;
+
+  &.closed {
+    width: 50px;
+  }
+}

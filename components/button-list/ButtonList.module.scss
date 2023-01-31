@@ -4,7 +4,7 @@
   grid-template-columns: repeat(1, 1fr);
   border-radius: 0.4rem;
   overflow-y: scroll;
-  max-height: 500px;
+  width: 100%;
 
   .channel {
     width: 100%;
@@ -34,5 +34,23 @@
       border-bottom-left-radius: 0.4rem;
       border-bottom-right-radius: 0.4rem;
     }
+  }
+
+  .active {
+    background-color: #555;
+  }
+}
+
+@if (max-width: 1500px) {
+
+}
+
+@if (max-width: 1500px) {
+  .channels-height {
+    max-height: 450px;
+  }
+} @else {
+  .channels-height {
+    max-height: 1000px;
   }
 }
