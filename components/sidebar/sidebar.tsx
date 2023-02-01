@@ -5,7 +5,8 @@ import styles from './Sidebar.module.scss';
 import ArrowLeft from 'components/icons/arrow-left';
 import ArrowRight from 'components/icons/arrow-right';
 import ButtonList from 'components/button-list/button-list';
-export interface Sidebar {
+import Logo from 'components/logo/logo';
+interface Sidebar {
   className?: string;
   channels: Array<{
     id: string;
@@ -23,30 +24,32 @@ export default function Sidebar({
   channels,
   channelSelected,
   onHandleChannel }: Sidebar) {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   const toggle = () => {
     setOpen(!isOpen);
   }
   return (
-    <div className={`${styles['sidebar']} ${className}`}>
-      <aside className={`${styles['content']} ${styles[`${!isOpen && 'closed'}`]}`}>
+    <aside className={`${styles['sidebar']} ${className}`}>
+      <div className={styles['logo-container']}>
+        <Logo isOpen={isOpen} />
+      </div>
+      <div className={`${styles['content']} ${styles[`${!isOpen && 'closed'}`]}`}>
         {
           isOpen && (
-            <>
-              <h3 className={styles['title']}>Canales</h3>
-              <ButtonList
-                channels={channels}
-                channelSelected={channelSelected}
-                onHandleChannel={onHandleChannel}
-              />
-            </>
+            <ButtonList
+              channels={channels}
+              channelSelected={channelSelected}
+              onHandleChannel={onHandleChannel}
+            />
           )
         }
-      </aside>
-      <button className={styles['btn']} onClick={toggle}>
-        {isOpen ? <ArrowLeft /> : <ArrowRight />}
-      </button>
-    </div>
+      </div>
+      <div className={styles['footer']}>
+        <button className={styles['btn']} onClick={toggle}>
+          {isOpen ? <ArrowLeft /> : <ArrowRight />}
+        </button>
+      </div>
+    </aside>
   );
 }

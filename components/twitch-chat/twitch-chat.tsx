@@ -1,4 +1,4 @@
-export interface TwitchChatProps {
+interface TwitchChatProps {
   channel: string;
 }
 

@@ -63,7 +63,7 @@ channels.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
 export default function Home() {
   const [channelSelected, setChannelSelected] = useState(channels[0])
   return (
-    <div className={styles.container}>
+    <div>
       <HeadComponent />
 
       <main className={styles['main']}>
@@ -75,13 +75,17 @@ export default function Home() {
 
         <div className={styles['video-container']}>
           <YouTubeVideo
-            videoId={channelSelected.id} />
+            title={channelSelected.name}
+            videoId={channelSelected.id}
+          />
         </div>
 
         {/* <div className={styles['left']} >
           <TwitchChat channel='tinoburgos' />
         </div> */}
       </main>
+
+      <footer></footer>
     </div>
   )
 }

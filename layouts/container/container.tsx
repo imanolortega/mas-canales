@@ -1,7 +1,7 @@
 import { ElementType, ReactNode, useMemo } from 'react';
 import styles from './container.module.scss';
 
-export interface ContainerProps {
+interface ContainerProps {
   Tag?: ElementType;
   size?: 'default' | 'medium' | 'small' | 'full';
   children: ReactNode;

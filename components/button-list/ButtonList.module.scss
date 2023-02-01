@@ -1,56 +1,60 @@
+@import 'styles/config/_colors.scss';
+
 .channels {
   margin: 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  border-radius: 0.4rem;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
   overflow-y: scroll;
   width: 100%;
+  height: 90%;
 
   .channel {
     width: 100%;
     display: block;
     border: none;
-    background-color: #333;
-    color: #fff;
+    background-color: $btn-background;
+    color: $snow;
     padding: 20px 20px;
-    font-size: 16px;
+    font-family: inherit;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: #555;
+      background-color: $btn-background-active;
     }
 
     &:active {
-      background-color: #222;
+      background-color: $btn-background-active;
     }
 
     &:first-child {
-      border-top-left-radius: 0.4rem;
-      border-top-right-radius: 0.4rem;
+      border-top-left-radius: 0.8rem;
     }
 
     &:last-child {
-      border-bottom-left-radius: 0.4rem;
-      border-bottom-right-radius: 0.4rem;
+      border-bottom-left-radius: 0.8rem;
     }
   }
 
   .active {
-    background-color: #555;
+    background-color: $btn-background-active;
   }
-}
 
-@if (max-width: 1500px) {
-
-}
-
-@if (max-width: 1500px) {
-  .channels-height {
-    max-height: 550px;
+  &::-webkit-scrollbar {
+    background-color: $btn-background-alternative;
+    width: 0.6rem;
+    border: none;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
   }
-} @else {
-  .channels-height {
-    max-height: 1000px;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $site-background-soft;
+    border: none;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
   }
 }

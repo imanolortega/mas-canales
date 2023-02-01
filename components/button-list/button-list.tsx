@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 import styles from './ButtonList.module.scss'
 
-export interface ButtonList {
+interface ButtonList {
   channels: Array<{
     id: string;
     name: string;

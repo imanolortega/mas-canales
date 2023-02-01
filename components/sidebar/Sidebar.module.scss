@@ -4,7 +4,19 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 1.5rem;
+  padding: 2rem 1.5rem;
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    margin-bottom: 3rem;
+
+    image {
+      width: 150px;
+    }
+  }
 
   .btn {
     background: $btn-background;
@@ -17,23 +29,26 @@
     justify-content: center;
     padding: 0.25rem;
     cursor: pointer;
-    bottom: 4rem;
+    bottom: 1.3rem;
     position: absolute;
   }
 
   .content {
     background: $site-background;
-    width: 300px;
+    width: 16rem;
+    height: 100%;
     transition: width 0.5s ease;
 
     &.closed {
       width: 45px;
     }
+
+    @media screen and (max-width: 1500px) {
+      width: 15rem;
+      height: 500px;
+    }
   }
 
-  .title {
-    font-size: 1.3rem;
-    text-align: center;
-    color: $snow;
+  .footer {
   }
 }
