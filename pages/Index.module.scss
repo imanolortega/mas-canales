@@ -6,9 +6,10 @@
   display: flex;
 
   .video-container {
+    background-color: $btn-background-alternative;
     flex: 1;
     padding: 1rem 1.5rem;
-    border-left: 0.1rem solid $line;
+    //border-left: 0.1rem solid $line;
 
     iframe {
       width: 100%;

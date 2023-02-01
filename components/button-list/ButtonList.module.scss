@@ -11,11 +11,13 @@
   height: 90%;
 
   .channel {
+    text-align: left;
     width: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
     border: none;
     background-color: $btn-background;
-    color: $snow;
+    color: $snow-alternative;
     padding: 20px 20px;
     font-family: inherit;
     font-size: 1.1rem;
@@ -24,10 +26,11 @@
 
     &:hover {
       background-color: $btn-background-active;
+      color: $snow;
     }
 
     &:active {
-      background-color: $btn-background-active;
+      background-color: $green;
     }
 
     &:first-child {
@@ -40,7 +43,9 @@
   }
 
   .active {
-    background-color: $btn-background-active;
+    background-color: $green;
+    color: $line;
+    font-weight: 600;
   }
 
   &::-webkit-scrollbar {

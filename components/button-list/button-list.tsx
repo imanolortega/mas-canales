@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Dispatch, SetStateAction } from 'react';
 
 import styles from './ButtonList.module.scss'
@@ -24,7 +25,9 @@ export default function ButtonList({
         <button
           key={channel.name}
           className={`${styles['channel']} ${channelSelected.id === channel.id ? styles['active'] : ''}`}
-          onClick={() => onHandleChannel(channel)}>{channel.name}</button>
+          onClick={() => onHandleChannel(channel)}>
+          {channel.name}
+        </button>
       ))}
     </div>
   );

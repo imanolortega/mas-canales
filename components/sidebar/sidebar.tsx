@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Dispatch, SetStateAction } from 'react';
 import styles from './Sidebar.module.scss';
 
-import ArrowLeft from 'components/icons/arrow-left';
-import ArrowRight from 'components/icons/arrow-right';
-import ButtonList from 'components/button-list/button-list';
-import Logo from 'components/logo/logo';
+import ArrowLeft from '@components/icons/arrow-left';
+import ArrowRight from '@components/icons/arrow-right';
+import ButtonList from '@components/button-list/button-list';
+import Logo from '@components/logo/logo';
 interface Sidebar {
   className?: string;
   channels: Array<{
