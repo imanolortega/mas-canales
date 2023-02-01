@@ -46,7 +46,7 @@ export default function Sidebar({
         }
       </div>
       <div className={styles['footer']}>
-        <button className={styles['btn']} onClick={toggle}>
+        <button title="Arrow Button" className={styles['btn']} onClick={toggle}>
           {isOpen ? <ArrowLeft /> : <ArrowRight />}
         </button>
       </div>

@@ -9,9 +9,9 @@ export default function Logo({ isOpen }: Logo) {
     <>
       {
         isOpen ? (
-          <Image src="/logo/logo-mas-canales-ligth.png" alt="logo" width={185} height={50} />
+          <Image src="/logo/logo-mas-canales-ligth.png" alt="Más Canales logo" width={185} height={50} />
         ) : (
-          <Image src="/logo/isotype-mas-canales.png" alt="logo" width={50} height={50} />
+          <Image src="/logo/isotype-mas-canales.png" alt="Más Canales isotipo" width={48} height={48} />
         )
       }
     </>
