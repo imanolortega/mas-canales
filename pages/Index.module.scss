@@ -1,21 +1,13 @@
 @import 'styles/config/_colors.scss';
 
 .main {
-  min-height: 100vh;
-  padding-bottom: 0;
   display: flex;
+  min-height: 100vh;
+  overflow: hidden;
 
-  .video-container {
+  .video {
     background-color: $btn-background-alternative;
     flex: 1;
-    padding: 1rem 1.5rem;
-    //border-left: 0.1rem solid $line;
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 0.8rem;
-    }
+    padding: 1.5rem;
   }
 }

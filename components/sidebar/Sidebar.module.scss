@@ -34,8 +34,8 @@
   }
 
   .content {
+    flex: 1;
     width: 16rem;
-    height: 100%;
     transition: width 0.5s ease;
 
     &.closed {
@@ -44,7 +44,8 @@
 
     @media screen and (max-width: 1500px) {
       width: 15rem;
-      height: 800px;
+      height: 600px;
+      flex: none;
     }
   }
 

@@ -8,7 +8,11 @@ interface YouTubeVideoProps {
 export default function YouTubeVideo({ title, videoId }: YouTubeVideoProps) {
   return (
     <div className={styles['video-container']}>
-      <h3>{title}</h3>
+      <div className={styles['title-container']}>
+        <h3 className={styles['title']} >
+          <span>{title}</span>
+        </h3>
+      </div>
       <iframe
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
