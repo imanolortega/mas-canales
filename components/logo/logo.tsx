@@ -6,14 +6,13 @@ interface Logo {
 
 export default function Logo({ isOpen }: Logo) {
   return (
-    <>
-      {
-        isOpen ? (
-          <Image src="/logo/mas-canales-logo.png" alt="Más Canales logo" width={169} height={49} />
-        ) : (
-          <Image src="/logo/mas-canales-isotype.png" alt="Más Canales isotipo" width={48} height={48} />
-        )
-      }
-    </>
+    <Image
+      src={
+        isOpen ?
+          "/logo/mas-canales-logo.png" : "/logo/mas-canales-isotype.png"}
+      alt={isOpen ? "Más Canales logo" : "Más Canales isotipo"}
+      width={isOpen ? 169 : 48}
+      height={isOpen ? 49 : 48}
+    />
   );
 }

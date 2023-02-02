@@ -3,7 +3,6 @@ import { Dispatch, SetStateAction } from 'react';
 import styles from './Sidebar.module.scss';
 
 import ArrowLeft from '@components/icons/arrow-left';
-import ArrowRight from '@components/icons/arrow-right';
 import ButtonList from '@components/button-list/button-list';
 import Logo from '@components/logo/logo';
 interface Sidebar {
@@ -35,8 +34,8 @@ export default function Sidebar({
         <Logo isOpen={isOpen} />
       </div>
       <div
-        className={`${styles['content']} ${styles[`${!isOpen && 'closed'}`]}`}>
-        <div className={`${styles['button-list']} ${styles[`${!isOpen && 'closed'}`]}`}>
+        className={`${styles['content']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}>
+        <div className={`${styles['button-list']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}>
           <ButtonList
             channels={channels}
             channelSelected={channelSelected}
@@ -45,8 +44,8 @@ export default function Sidebar({
         </div>
       </div>
       <div>
-        <button title="Arrow Button" className={styles['btn']} onClick={toggle}>
-          {isOpen ? <ArrowLeft /> : <ArrowRight />}
+        <button title="Arrow Button"  className={`${styles['btn']} ${!isOpen ? styles['rotate'] : ''}`} onClick={toggle}>
+           <ArrowLeft />
         </button>
       </div>
     </aside>
