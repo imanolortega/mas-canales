@@ -2,10 +2,11 @@
 
 .main {
   display: flex;
-  min-height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
 
   .video {
+    height: 100vh;
     background-color: $btn-background-alternative;
     flex: 1;
     padding: 1.5rem;

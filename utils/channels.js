@@ -6,7 +6,7 @@ export const channels = [
     name: 'Todo Noticias',
   },
   {
-    id: 'hVE2rKvixd4',
+    id: 'nvnJjdgFioM',
     name: 'C5N',
   },
   {
@@ -14,7 +14,7 @@ export const channels = [
     name: 'Crónica TV',
   },
   {
-    id: '6_d4yYpCqsk',
+    id: '0ib0IQf3_8M',
     name: 'La Nación +',
   },
   {
@@ -31,23 +31,35 @@ export const channels = [
   },
   {
     id: 'uk6btTpO5IY',
-    name: 'Canal de la Ciudad de Buenos Aires'
-  },
-  {
-    id: 'SWMaoqZYDXo',
-    name: 'Telefé'
+    name: 'Canal de la Ciudad (CABA)'
   },
   {
     id: 'rI5aucf1vYY',
-    name: 'Telefé Córdoba'
+    name: 'Telefé (Córdoba)'
   },
   {
-    id: 'wGB-c2S5XYw',
+    id: 'HUPVQK5Rmig',
     name: 'IP Noticias'
   },
   {
     id: 'O9mOtdZ-nSk',
     name: 'Euronews'
+  },
+  {
+    id: 'IUQyg-SFvXQ',
+    name: 'El Doce (Córdoba)'
+  },
+  {
+    id: 'aVMWePYmur4',
+    name: 'Telefé (Rosario)'
+  },
+  {
+    id: 'ECVxfEySyRc',
+    name: 'Televisión Pública'
+  },
+  {
+    id: 'qMzgrEWtIng',
+    name: 'Canal Diez (Mar del Plata)',
   }
 ]
 
