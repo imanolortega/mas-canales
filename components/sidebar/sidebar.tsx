@@ -34,16 +34,15 @@ export default function Sidebar({
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
-      <div className={`${styles['content']} ${styles[`${!isOpen && 'closed'}`]}`}>
-        {
-          isOpen && (
-            <ButtonList
-              channels={channels}
-              channelSelected={channelSelected}
-              onHandleChannel={onHandleChannel}
-            />
-          )
-        }
+      <div
+        className={`${styles['content']} ${styles[`${!isOpen && 'closed'}`]}`}>
+        <div className={`${styles['button-list']} ${styles[`${!isOpen && 'closed'}`]}`}>
+          <ButtonList
+            channels={channels}
+            channelSelected={channelSelected}
+            onHandleChannel={onHandleChannel}
+          />
+        </div>
       </div>
       <div>
         <button title="Arrow Button" className={styles['btn']} onClick={toggle}>
