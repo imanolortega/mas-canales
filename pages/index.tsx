@@ -9,7 +9,6 @@ import YouTubeVideo from '@components/youtube-video/youtube-video'
 
 export default function Home() {
   const [channelSelected, setChannelSelected] = useState(channels[0])
-
   return (
     <>
       <HeadComponent />

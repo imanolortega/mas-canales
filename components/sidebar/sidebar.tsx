@@ -24,7 +24,6 @@ export default function Sidebar({
   channelSelected,
   onHandleChannel }: Sidebar) {
   const [isOpen, setOpen] = useState(true);
-
   const toggle = () => {
     setOpen(!isOpen);
   }

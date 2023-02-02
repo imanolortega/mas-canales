@@ -1,4 +1,4 @@
-import { orderAlphabetically } from '@utils/common'
+import { orderAlphabetically } from '@utils/common';
 
 export const channels = [
   {
@@ -61,6 +61,6 @@ export const channels = [
     id: 'qMzgrEWtIng',
     name: 'Canal Diez (Mar del Plata)',
   }
-]
+];
 
-orderAlphabetically(channels)
+orderAlphabetically(channels);
