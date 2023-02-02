@@ -1,0 +1,17 @@
+.logo-transition {
+  transition: display 1s ease-in;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+.isotype-transition {
+  transition: display 1s ease-in;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
