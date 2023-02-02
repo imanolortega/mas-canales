@@ -3,7 +3,7 @@ import { orderAlphabetically } from '@utils/common';
 export const channels = [
   {
     id: '6hWHWGJ1Gbw',
-    name: 'Todo Noticias',
+    name: 'TN Todo Noticias',
   },
   {
     id: '-LzhXjAeApw',
