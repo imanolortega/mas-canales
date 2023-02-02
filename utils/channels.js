@@ -2,11 +2,11 @@ import { orderAlphabetically } from '@utils/common';
 
 export const channels = [
   {
-    id: 'O3bhL1gPdxM',
+    id: '6hWHWGJ1Gbw',
     name: 'Todo Noticias',
   },
   {
-    id: 'nvnJjdgFioM',
+    id: '-LzhXjAeApw',
     name: 'C5N',
   },
   {
@@ -18,7 +18,7 @@ export const channels = [
     name: 'La Nación +',
   },
   {
-    id: 'C2tMrZ6_xGE',
+    id: 'cD-M_gKEevg',
     name: 'Canal 26'
   },
   {
