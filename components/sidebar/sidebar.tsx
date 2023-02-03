@@ -72,7 +72,7 @@ export default function Sidebar({
           />
         </div>
       </div>
-      <div>
+      <div className={styles['arrow-btn-container']}>
         <button title="Arrow Button"  className={`${styles['btn']} ${!isOpen ? styles['rotate'] : ''}`} onClick={toggle}>
            <ArrowLeft />
         </button>

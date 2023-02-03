@@ -1,12 +1,12 @@
 @import 'styles/config/_colors.scss';
 
 .sidebar {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-rows: 10% 10% 70% 10%;
+  padding: 1.5rem;
   max-height: 100vh;
 
+  /* First Row */
   .logo-container {
     display: flex;
     justify-content: center;
@@ -19,6 +19,7 @@
     }
   }
 
+  /* Second Row */
   .search-btn-container {
     display: flex;
     width: 45px;
@@ -48,6 +49,7 @@
     }
   }
 
+  /* Second Row bis */
   .search-container {
     position: relative;
     margin-bottom: 1.5rem;
@@ -75,11 +77,12 @@
 
     svg {
       position: absolute;
-      bottom: 0.9rem;
+      bottom: 1.3rem;
       right: 0.8rem;
     }
   }
 
+  /* Third Row */
   .content {
     flex: 1;
     transition: width 0.5s ease;
@@ -115,27 +118,32 @@
     }
   }
 
-  .btn {
-    background: $btn-background;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.25rem;
-    cursor: pointer;
-    bottom: 1.3rem;
-    position: absolute;
-    transition: transform 0.5s ease;
+  /* Fourth Row */
+  .arrow-btn-container {
+    position: relative;
 
-    &:hover {
-      background: $purple;
+    .btn {
+      background: $btn-background;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      cursor: pointer;
+      bottom: 0rem;
+      position: absolute;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        background: $purple;
+      }
     }
-  }
 
-  .rotate {
-    transform: rotate(180deg);
+    .rotate {
+      transform: rotate(180deg);
+    }
   }
 }
