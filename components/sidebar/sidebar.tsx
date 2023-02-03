@@ -25,21 +25,22 @@ export default function Sidebar({
   channelSelected,
   onHandleChannel }: Sidebar) {
   /* A hook that is used to focus the input. */
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
   /* A hook that is used to toggle the sidebar. 🎚️ */
   const [isOpen, setOpen] = useState(true);
-  const toggle = () => {
-    setOpen(!isOpen);
-  };
-  const searchToggle = () => {
-    setIsSearchOpen(!isSearchOpen);
-    setOpen(!isOpen);
+  const toggle = (type: string) => {
+    if (type === 'open') {
+      setOpen(!isOpen);
+    } else if (type === 'search') {
+      setIsSearchOpen(prevCount => prevCount + 1);
+      setOpen(true);
+    }
   };
 
   useEffect(() => {
-    if (isSearchOpen && inputRef.current) {
+    if (isSearchOpen > 0 && inputRef.current) {
       inputRef.current.focus();
     }
   }, [isSearchOpen]);
@@ -75,7 +76,7 @@ export default function Sidebar({
       </form>
       <div className={`${styles['search-btn-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}>
         {!isOpen && (
-          <button title="Search Button" className={`${styles['search-btn']}`} onClick={searchToggle}>
+          <button title="Search Button" className={`${styles['search-btn']}`} onClick={e => toggle('search')}>
             <SearchIcon height={22} width={22} />
           </button>
         )}
@@ -90,7 +91,7 @@ export default function Sidebar({
         </div>
       </div>
       <div className={styles['arrow-btn-container']}>
-        <button title="Arrow Button"  className={`${styles['btn']} ${isOpen ? styles['open'] : styles['closed']}`} onClick={toggle}>
+        <button title="Arrow Button"  className={`${styles['btn']} ${isOpen ? styles['open'] : styles['closed']}`} onClick={e => toggle('open')}>
            <ArrowLeft />
         </button>
       </div>
