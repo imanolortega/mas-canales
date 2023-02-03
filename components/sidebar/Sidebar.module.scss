@@ -2,7 +2,7 @@
 
 .sidebar {
   display: grid;
-  grid-template-rows: 10% 10% 70% 10%;
+  grid-template-rows: 10% 8% 72% 10%;
   padding: 1.5rem;
   max-height: 100vh;
 
@@ -19,12 +19,12 @@
     }
   }
 
-  /* Second Row */
+  /* Second Row Sidebar Close */
   .search-btn-container {
     display: flex;
     width: 45px;
     height: 45px;
-    transition: display 3s ease-in;
+    transition: display 3s linear;
     display: block;
 
     &.open {
@@ -49,11 +49,11 @@
     }
   }
 
-  /* Second Row bis */
+  /* Second Row Sidebar Open */
   .search-container {
     position: relative;
-    margin-bottom: 1.5rem;
-    transition: display 3s ease-in;
+    //margin-bottom: 1.5rem;
+    transition: display 3s linear;
     display: none;
 
     &.open {
@@ -77,7 +77,7 @@
 
     svg {
       position: absolute;
-      bottom: 1.3rem;
+      top: 1rem;
       right: 0.8rem;
     }
   }
@@ -85,7 +85,7 @@
   /* Third Row */
   .content {
     flex: 1;
-    transition: width 0.5s ease;
+    transition: width 0.5s linear;
 
     &.open {
       width: 16rem;
@@ -100,9 +100,9 @@
     }
 
     .button-list {
-      transition: display 3s ease-in;
+      transition: display 0.5s linear;
       display: none;
-      height: 600px;
+      height: 650px;
 
       &.open {
         display: block;
@@ -133,17 +133,23 @@
       justify-content: center;
       padding: 0.25rem;
       cursor: pointer;
+      right: 0rem;
       bottom: 0rem;
       position: absolute;
-      transition: transform 0.5s ease;
+      transition: transform 0.3s linear;
 
       &:hover {
         background: $purple;
       }
+
+      &.open {
+        transform: rotate(180deg);
+      }
+
+      &.closed {
+        transform: rotate(0deg);
+      }
     }
 
-    .rotate {
-      transform: rotate(180deg);
-    }
   }
 }
