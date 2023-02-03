@@ -1,12 +1,12 @@
 @import 'styles/config/_colors.scss';
 
 .sidebar {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-rows: 10% 8% 72% 10%;
+  padding: 1.5rem;
   max-height: 100vh;
 
+  /* First Row */
   .logo-container {
     display: flex;
     justify-content: center;
@@ -19,11 +19,12 @@
     }
   }
 
+  /* Second Row Sidebar Close */
   .search-btn-container {
     display: flex;
     width: 45px;
     height: 45px;
-    transition: display 3s ease-in;
+    transition: display 3s linear;
     display: block;
 
     &.open {
@@ -48,10 +49,11 @@
     }
   }
 
+  /* Second Row Sidebar Open */
   .search-container {
     position: relative;
-    margin-bottom: 1.5rem;
-    transition: display 3s ease-in;
+    //margin-bottom: 1.5rem;
+    transition: display 3s linear;
     display: none;
 
     &.open {
@@ -75,14 +77,15 @@
 
     svg {
       position: absolute;
-      bottom: 0.9rem;
+      top: 1rem;
       right: 0.8rem;
     }
   }
 
+  /* Third Row */
   .content {
     flex: 1;
-    transition: width 0.5s ease;
+    transition: width 0.5s linear;
 
     &.open {
       width: 16rem;
@@ -97,9 +100,9 @@
     }
 
     .button-list {
-      transition: display 3s ease-in;
+      transition: display 0.5s linear;
       display: none;
-      height: 600px;
+      height: 650px;
 
       &.open {
         display: block;
@@ -115,27 +118,38 @@
     }
   }
 
-  .btn {
-    background: $btn-background;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.25rem;
-    cursor: pointer;
-    bottom: 1.3rem;
-    position: absolute;
-    transition: transform 0.5s ease;
+  /* Fourth Row */
+  .arrow-btn-container {
+    position: relative;
 
-    &:hover {
-      background: $purple;
+    .btn {
+      background: $btn-background;
+      width: 46px;
+      height: 46px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      cursor: pointer;
+      right: 0rem;
+      bottom: 0rem;
+      position: absolute;
+      transition: transform 0.3s linear;
+
+      &:hover {
+        background: $purple;
+      }
+
+      &.open {
+        transform: rotate(180deg);
+      }
+
+      &.closed {
+        transform: rotate(0deg);
+      }
     }
-  }
 
-  .rotate {
-    transform: rotate(180deg);
   }
 }
