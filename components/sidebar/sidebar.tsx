@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Dispatch, SetStateAction } from 'react';
 import styles from './Sidebar.module.scss';
 
@@ -24,11 +24,21 @@ export default function Sidebar({
   channels,
   channelSelected,
   onHandleChannel }: Sidebar) {
+  /* A hook that is used to focus the input. */
+  const inputRef = useRef<HTMLInputElement>(null);
+
   /* A hook that is used to toggle the sidebar. 🎚️ */
   const [isOpen, setOpen] = useState(true);
   const toggle = () => {
     setOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
   /* A hook that is used to filter the channels. 🔍 */
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -45,17 +55,19 @@ export default function Sidebar({
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
-      <div
+      <form
         className={`${styles['search-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}
       >
         <input
-          type="text"
-          placeholder="Buscar canal"
-          value={searchTerm}
+          autoFocus
           onChange={e => setSearchTerm(e.target.value)}
+          placeholder="Buscar canal"
+          ref={inputRef}
+          type="text"
+          value={searchTerm}
         />
         <SearchIcon />
-      </div>
+      </form>
       <div className={`${styles['search-btn-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}>
         {!isOpen && (
           <button title="Search Button" className={`${styles['search-btn']}`} onClick={toggle}>
