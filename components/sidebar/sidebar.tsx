@@ -6,6 +6,7 @@ import ArrowLeft from '@components/icons/arrow-left';
 import ButtonList from '@components/button-list/button-list';
 import Logo from '@components/logo/logo';
 import SearchIcon from '@components/icons/search';
+
 interface Sidebar {
   className?: string;
   channels: Array<{
@@ -65,7 +66,6 @@ export default function Sidebar({
         className={`${styles['search-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}
       >
         <input
-          autoFocus
           onChange={e => setSearchTerm(e.target.value)}
           placeholder="Buscar canal"
           ref={inputRef}
