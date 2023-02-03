@@ -25,6 +25,7 @@ export default function Sidebar({
   channelSelected,
   onHandleChannel }: Sidebar) {
   /* A hook that is used to focus the input. */
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   /* A hook that is used to toggle the sidebar. 🎚️ */
@@ -32,12 +33,16 @@ export default function Sidebar({
   const toggle = () => {
     setOpen(!isOpen);
   };
+  const searchToggle = () => {
+    setIsSearchOpen(!isSearchOpen);
+    setOpen(!isOpen);
+  };
 
   useEffect(() => {
-    if (isOpen && inputRef.current) {
+    if (isSearchOpen && inputRef.current) {
       inputRef.current.focus();
     }
-  }, [isOpen]);
+  }, [isSearchOpen]);
 
   /* A hook that is used to filter the channels. 🔍 */
   const [searchTerm, setSearchTerm] = useState('');
@@ -70,7 +75,7 @@ export default function Sidebar({
       </form>
       <div className={`${styles['search-btn-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}>
         {!isOpen && (
-          <button title="Search Button" className={`${styles['search-btn']}`} onClick={toggle}>
+          <button title="Search Button" className={`${styles['search-btn']}`} onClick={searchToggle}>
             <SearchIcon height={22} width={22} />
           </button>
         )}
