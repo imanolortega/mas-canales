@@ -54,7 +54,7 @@ export const channels = [
     name: 'Telefé (Rosario)'
   },
   {
-    id: 'ECVxfEySyRc',
+    id: 'nF_HAO0A8dc',
     name: 'Televisión Pública'
   },
   {
