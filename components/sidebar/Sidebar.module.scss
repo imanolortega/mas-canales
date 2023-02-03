@@ -85,7 +85,7 @@
   /* Third Row */
   .content {
     flex: 1;
-    transition: width 0.5s linear;
+    transition: width 0.3s linear;
 
     &.open {
       width: 16rem;
@@ -100,7 +100,7 @@
     }
 
     .button-list {
-      transition: display 0.5s linear;
+      transition: display 0.3s linear;
       display: none;
       height: 650px;
 
