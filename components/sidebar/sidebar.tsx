@@ -41,12 +41,12 @@ export default function Sidebar({
   }, [searchTerm, channels]);
 
   return (
-    <aside className={`${styles['sidebar']} ${className}`}>
+    <aside className={`${styles['sidebar']} ${className || ''}`}>
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
       <div
-        className={`${styles['search-container']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}
+        className={`${styles['search-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}
       >
         <input
           type="text"
@@ -73,7 +73,7 @@ export default function Sidebar({
         </div>
       </div>
       <div className={styles['arrow-btn-container']}>
-        <button title="Arrow Button"  className={`${styles['btn']} ${!isOpen ? styles['open'] : styles['close']}`} onClick={toggle}>
+        <button title="Arrow Button"  className={`${styles['btn']} ${isOpen ? styles['open'] : styles['closed']}`} onClick={toggle}>
            <ArrowLeft />
         </button>
       </div>
