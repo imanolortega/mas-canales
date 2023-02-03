@@ -75,7 +75,7 @@ export default function YouTubeVideo({
   };
 
   return (
-    <div onClick={e => console.log('Eh')} className={styles['video-container']}>
+    <div className={styles['video-container']}>
       <div className={styles['title-container']}>
         <h3 className={styles['title']} >
           <span>{title}</span>
