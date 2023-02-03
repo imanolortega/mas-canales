@@ -4,6 +4,8 @@
   height: 100%;
 
   .title-container{
+    display: flex;
+    justify-content: space-between;
     padding-left: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -25,10 +27,37 @@
     }
   }
 
-  iframe {
-    border: none;
-    border-radius: 0.8rem;
-    height: calc(100% - 2.5rem);
-    width: 100%;
+  .buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+
+    .btn {
+      background: $btn-background;
+      color: $snow;
+      width: 35px;
+      height: 35px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        background: $purple;
+      }
+    }
+  }
+
+  .video {
+    height: 100%;
+    iframe {
+      border: none;
+      border-radius: 0.8rem;
+      height: calc(100% - 2.5rem);
+      width: 100%;
+    }
   }
 }
