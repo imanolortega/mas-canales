@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './YouTubeVideo.module.scss';
-import YouTube, { YouTubeProps } from 'react-youtube';
-//import { YT } from 'react-youtube/dist/types/YouTube.d';
+import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube';
 
 import Pause from '@components/icons/pause';
 import PlayIcon from '@components/icons/play';
@@ -18,7 +17,7 @@ export default function YouTubeVideo({
   videoId }: YouTubeVideoProps) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
-  const [player, setPlayer] = useState<any | null>(null);
+  const [player, setPlayer] = useState<YouTubePlayer>();
 
   useEffect(() => {
     if (player) {
@@ -43,10 +42,10 @@ export default function YouTubeVideo({
     playerVars: {
       allowFullScreen: true,
       autoplay: 1,
-      mute: 1,
+      mute: 0,
       origin: "http://localhost:3000/",
       //origin: `${process.env.URL_ORIGIN}`,
-    },
+    }
   };
 
   const togglePlay = () => {

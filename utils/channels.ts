@@ -56,10 +56,6 @@ export const channels = [
   {
     id: 'nF_HAO0A8dc',
     name: 'Televisión Pública'
-  },
-  {
-    id: 'qMzgrEWtIng',
-    name: 'Canal Diez (Mar del Plata)',
   }
 ];
 
