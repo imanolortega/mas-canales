@@ -52,7 +52,7 @@
   }
 
   .video {
-    height: 100%;
+    height: calc(100% - 0.5rem);
     iframe {
       border: none;
       border-radius: 0.8rem;
