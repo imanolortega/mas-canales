@@ -2,7 +2,7 @@
 
 .sidebar {
   display: grid;
-  grid-template-rows: 10% 8% 72% 10%;
+  grid-template-rows: 10% 7% 6% 65% 12%;
   padding: 1.5rem;
   max-height: 100vh;
 
@@ -52,7 +52,6 @@
   /* Second Row Sidebar Open */
   .search-container {
     position: relative;
-    //margin-bottom: 1.5rem;
     transition: display 3s linear;
     display: none;
 
@@ -83,6 +82,35 @@
   }
 
   /* Third Row */
+  .selects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5rem;
+
+    .button {
+      background: $btn-background;
+      border: none;
+      border-radius: 0.6rem;
+      padding: 0.5rem;
+      font-family: 'Rubik';
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background: $purple;
+      }
+    }
+
+    .active {
+      background: $purple;
+    }
+
+    &.closed {
+      display: none;
+    }
+  }
+
+  /* Fourth Row */
   .content {
     flex: 1;
     transition: width 0.3s linear;
@@ -102,7 +130,7 @@
     .button-list {
       transition: display 0.3s linear;
       display: none;
-      height: 650px;
+      height: 600px;
 
       &.open {
         display: block;
@@ -118,7 +146,7 @@
     }
   }
 
-  /* Fourth Row */
+  /* Five Row */
   .arrow-btn-container {
     position: relative;
 
@@ -126,7 +154,6 @@
       background: $btn-background;
       width: 46px;
       height: 46px;
-      border: none;
       border-radius: 50%;
       display: flex;
       align-items: center;

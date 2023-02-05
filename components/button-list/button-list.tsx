@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Dispatch, SetStateAction } from 'react';
 
 import styles from './ButtonList.module.scss'
@@ -20,7 +19,7 @@ export default function ButtonList({
   channelSelected,
   onHandleChannel }: ButtonList) {
   return (
-    <div className={`${styles['channels']} ${styles['channels-height']}`}>
+    <div className={styles['channels']}>
       {channels.map((channel) => (
         <button
           key={channel.name}
