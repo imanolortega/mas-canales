@@ -6,12 +6,14 @@ interface ButtonList {
   channels: Array<{
     id: string;
     name: string;
+    type: string;
   }>;
   channelSelected: {
     id: string;
     name: string;
+    type: string;
   }
-  onHandleChannel: Dispatch<SetStateAction<{ id: string; name: string; }>>;
+  onHandleChannel: Dispatch<SetStateAction<{ id: string; name: string; type: string; }>>;
 }
 
 export default function ButtonList({
