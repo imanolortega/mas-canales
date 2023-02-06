@@ -7,6 +7,7 @@ import ButtonList from '@components/button-list/button-list';
 import Logo from '@components/logo/logo';
 import SearchIcon from '@components/icons/search';
 import Button from '@components/buttons/button';
+import CloseIcon from '@components/icons/close';
 
 interface Sidebar {
   className?: string;
@@ -23,7 +24,8 @@ interface Sidebar {
   onHandleChannel: Dispatch<SetStateAction<{
     id: string;
     name: string;
-    type: string; }>>;
+    type: string;
+  }>>;
 }
 
 export default function Sidebar({
@@ -84,7 +86,15 @@ export default function Sidebar({
             type="text"
             value={searchTerm}
           />
-          <SearchIcon />
+          {!searchTerm && <SearchIcon className={styles['search-btn']} />}
+          {searchTerm && (
+            <Button
+              className={styles['close-btn']}
+              onHandleClick={() => setSearchTerm('')}
+              title="Borrar búsqueda"
+            >
+              <CloseIcon />
+            </Button>)}
         </form>
         <div className={`${styles['search-btn-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}>
           {!isOpen && (

@@ -76,8 +76,19 @@
 
     svg {
       position: absolute;
-      top: 1rem;
+      top: 0.9rem;
       right: 0.8rem;
+    }
+
+    .close-btn {
+      background: transparent;
+      position: absolute;
+      top: 0.9rem;
+      right: 0.5rem;
+
+      svg {
+        position: static;
+      }
     }
   }
 

@@ -1,11 +1,13 @@
 interface Sidebar {
+  className?: string;
   width?: number;
   height?: number;
 }
 
-export default function SearchIcon({ width, height }: Sidebar) {
+export default function SearchIcon({ className, width, height }: Sidebar) {
   return (
     <svg
+      className={className}
       height={height || 15}
       width={width || 15}
       fill="currentColor"
