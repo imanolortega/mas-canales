@@ -21,7 +21,7 @@ export default function Sidebar({
   channels,
   channelSelected,
   onHandleChannel }: Sidebar) {
-  /* A hook that is used to focus the input. */
+  /* Focus the input. */
   const [isSearchOpen, setIsSearchOpen] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -31,7 +31,7 @@ export default function Sidebar({
     }
   }, [isSearchOpen]);
 
-  /* A hook that is used to toggle the sidebar. 🎚️ */
+  /* Toggle the sidebar. 🎚️ */
   const [isOpen, setOpen] = useState(true);
   const toggle = (type: string) => {
     if (type === 'open') {
@@ -42,24 +42,25 @@ export default function Sidebar({
     }
   };
 
-  /* A hook that is used to filter the channels. 🔍 */
+  /* Filter the channels. 🔍 */
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState('all');
 
   const filteredChannels = useMemo(() => {
-    let filtered = channels;
-    if (selectedType !== 'all') {
-      filtered = channels.filter(channel => channel.type === selectedType);
-    }
     return searchTerm
-      ? filtered.filter(channel =>
+      ? channels.filter(channel =>
         channel.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
-      : filtered;
-  }, [searchTerm, channels, selectedType]);
+      : channels;
+  }, [searchTerm, channels]);
 
-  /* A hook that is used to toggle the favorite channels. */
+  /* Toggle the favorite channels. */
   const [favoriteChannels, setFavoriteChannels] = useState<Channel[]>([]);
+
+  useEffect(() => {
+    const storedChannels = JSON.parse(localStorage.getItem('favoriteChannels') || '[]');
+    setFavoriteChannels(storedChannels);
+  }, []);
 
   const toggleFavorite = (channel: Channel) => {
     if (channel.favorite) {
@@ -69,17 +70,22 @@ export default function Sidebar({
     }
   };
 
+  /* Creating a new array with the favorite channels first and then the rest of the channels. */
   const channelsToShow = [];
   const favoriteChannelIds: { [key: string]: boolean } = {};
   for (const channel of favoriteChannels as Channel[]) {
     channelsToShow.push(channel);
     favoriteChannelIds[channel.id] = true;
-  }
+  };
   for (const channel of filteredChannels as Channel[]) {
     if (!favoriteChannelIds[channel.id]) {
       channelsToShow.push(channel);
     }
-  }
+  };
+
+  useEffect(() => {
+    localStorage.setItem('favoriteChannels', JSON.stringify(favoriteChannels));
+  }, [favoriteChannels]);
 
   return (
     <aside className={`${styles['sidebar']} ${className || ''}`}>
@@ -150,6 +156,7 @@ export default function Sidebar({
             channels={channelsToShow}
             channelSelected={channelSelected}
             onHandleChannel={onHandleChannel}
+            selectedType={selectedType}
             toggleFavorite={toggleFavorite}
           />
         </div>
