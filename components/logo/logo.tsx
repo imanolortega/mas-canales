@@ -12,6 +12,7 @@ export default function Logo({ isOpen }: Logo) {
         alt="Más Canales Logo"
         className={`${styles['logo-transition']} ${isOpen ? styles['show'] : ''}`}
         src="/logo/mas-canales-logo.png"
+        priority={true}
         height={49}
         width={169}
       />
@@ -19,6 +20,7 @@ export default function Logo({ isOpen }: Logo) {
         alt="Más Canales Isotipo"
         className={`${styles['isotype-transition']} ${!isOpen ? styles['show'] : ''}`}
         src="/logo/mas-canales-isotype.png"
+        priority={true}
         height={48}
         width={48}
       />

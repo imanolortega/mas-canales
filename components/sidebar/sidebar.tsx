@@ -1,31 +1,19 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Channel } from '@utils/types';
 import { Dispatch, SetStateAction } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Sidebar.module.scss';
 
 import ArrowLeft from '@components/icons/arrow-left';
+import Button from '@components/buttons/button';
 import ButtonList from '@components/button-list/button-list';
+import CloseIcon from '@components/icons/close';
 import Logo from '@components/logo/logo';
 import SearchIcon from '@components/icons/search';
-import Button from '@components/buttons/button';
-import CloseIcon from '@components/icons/close';
-
 interface Sidebar {
   className?: string;
-  channels: Array<{
-    id: string;
-    name: string;
-    type: string;
-  }>;
-  channelSelected: {
-    id: string;
-    name: string;
-    type: string;
-  }
-  onHandleChannel: Dispatch<SetStateAction<{
-    id: string;
-    name: string;
-    type: string;
-  }>>;
+  channels: Array<Channel>;
+  channelSelected: Channel;
+  onHandleChannel: Dispatch<SetStateAction<Channel>>;
 }
 
 export default function Sidebar({
@@ -69,6 +57,29 @@ export default function Sidebar({
       )
       : filtered;
   }, [searchTerm, channels, selectedType]);
+
+  /* A hook that is used to toggle the favorite channels. */
+  const [favoriteChannels, setFavoriteChannels] = useState<Channel[]>([]);
+
+  const toggleFavorite = (channel: Channel) => {
+    if (channel.favorite) {
+      setFavoriteChannels(favoriteChannels.filter(c => c.id !== channel.id));
+    } else {
+      setFavoriteChannels([...favoriteChannels, { ...channel, favorite: true }]);
+    }
+  };
+
+  const channelsToShow = [];
+  const favoriteChannelIds: { [key: string]: boolean } = {};
+  for (const channel of favoriteChannels as Channel[]) {
+    channelsToShow.push(channel);
+    favoriteChannelIds[channel.id] = true;
+  }
+  for (const channel of filteredChannels as Channel[]) {
+    if (!favoriteChannelIds[channel.id]) {
+      channelsToShow.push(channel);
+    }
+  }
 
   return (
     <aside className={`${styles['sidebar']} ${className || ''}`}>
@@ -136,9 +147,10 @@ export default function Sidebar({
       <div className={`${styles['content']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}>
         <div className={`${styles['button-list']} ${styles[`${isOpen ? 'open' : ''}`]} ${styles[`${searchTerm.length > 0 || filteredChannels.length < 10 ? 'searching' : ''}`]}`}>
           <ButtonList
-            channels={filteredChannels}
+            channels={channelsToShow}
             channelSelected={channelSelected}
             onHandleChannel={onHandleChannel}
+            toggleFavorite={toggleFavorite}
           />
         </div>
       </div>

@@ -13,8 +13,8 @@
   .channel {
     text-align: left;
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 70% 30%;
     border: none;
     background-color: $btn-background;
     color: $snow-alternative;
@@ -27,6 +27,10 @@
     &:hover {
       background-color: $purple;
       color: $snow;
+
+      svg {
+        fill: $green;
+      }
     }
 
     &:active {
@@ -40,12 +44,20 @@
     &:last-child {
       border-bottom-left-radius: 0.8rem;
     }
+
+    .star {
+      justify-self: end;
+    }
   }
 
   .active {
     background-color: $green;
     color: $line;
     font-weight: 600;
+
+    svg {
+      fill: $purple;
+    }
   }
 
   &::-webkit-scrollbar {

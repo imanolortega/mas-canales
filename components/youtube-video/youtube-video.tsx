@@ -18,6 +18,7 @@ export default function YouTubeVideo({
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const [player, setPlayer] = useState<YouTubePlayer>();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (player) {
@@ -84,20 +85,21 @@ export default function YouTubeVideo({
             className={styles['btn']}
             onClick={togglePlay}
             title={isPlaying ? 'Pausar' : 'Reproducir'}
-            >
+          >
             {isPlaying ? <Pause /> : <PlayIcon />}
           </button>
           <button
             className={`${styles['btn']} ${styles['alternative']}`}
             onClick={toggleMute}
             title={isMuted ? 'Activar Sonido' : 'Silenciar'}
-            >
+          >
             {isMuted ? <MuteIcon /> : <SoundIcon />}
           </button>
         </div>
       </div>
       <YouTube
         className={styles['video']}
+        loading="eager"
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
         onReady={(event) => setPlayer(event.target)}
