@@ -28,7 +28,7 @@ export default function ButtonList({
           {channel.name}
           {channel.favorite ? (
             <span
-              className={styles['star']}
+              className={styles['added-favorite']}
               onClick={(e) => {
                 e.stopPropagation();
                 toggleFavorite(channel)
@@ -39,7 +39,7 @@ export default function ButtonList({
             </span>
           ) : (
             <span
-              className={styles['star']}
+              className={styles['favorite-to-add']}
               onClick={(e) => {
                 e.stopPropagation();
                 toggleFavorite(channel)

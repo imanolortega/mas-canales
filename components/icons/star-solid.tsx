@@ -1,8 +1,8 @@
 export default function StarSolid() {
   return (
     <svg
-      height={20}
-      width={20}
+      height={18}
+      width={18}
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512">
