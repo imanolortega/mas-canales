@@ -21,17 +21,16 @@ export default function Sidebar({
   channels,
   channelSelected,
   onHandleChannel }: Sidebar) {
-  /* Focus the input. */
+  /* Focus the input 🔦 */
   const [isSearchOpen, setIsSearchOpen] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-
   useEffect(() => {
     if (isSearchOpen > 0 && inputRef.current) {
       inputRef.current.focus();
     }
   }, [isSearchOpen]);
 
-  /* Toggle the sidebar. 🎚️ */
+  /* Toggle the sidebar 🎚️ */
   const [isOpen, setOpen] = useState(true);
   const toggle = (type: string) => {
     if (type === 'open') {
@@ -42,19 +41,7 @@ export default function Sidebar({
     }
   };
 
-  /* Filter the channels. 🔍 */
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedType, setSelectedType] = useState('all');
-
-  const filteredChannels = useMemo(() => {
-    return searchTerm
-      ? channels.filter(channel =>
-        channel.name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      : channels;
-  }, [searchTerm, channels]);
-
-  /* Toggle the favorite channels. */
+  /* Toggle the favorite channels 🎚️ */
   const [favoriteChannels, setFavoriteChannels] = useState<Channel[]>([]);
 
   useEffect(() => {
@@ -70,22 +57,32 @@ export default function Sidebar({
     }
   };
 
-  /* Creating a new array with the favorite channels first and then the rest of the channels. */
-  const channelsToShow = [];
-  const favoriteChannelIds: { [key: string]: boolean } = {};
-  for (const channel of favoriteChannels as Channel[]) {
-    channelsToShow.push(channel);
-    favoriteChannelIds[channel.id] = true;
-  };
-  for (const channel of filteredChannels as Channel[]) {
-    if (!favoriteChannelIds[channel.id]) {
-      channelsToShow.push(channel);
-    }
-  };
-
   useEffect(() => {
     localStorage.setItem('favoriteChannels', JSON.stringify(favoriteChannels));
   }, [favoriteChannels]);
+
+  /* Filtering the channels 🔍 */
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedType, setSelectedType] = useState('all');
+
+  const filteredChannels = useMemo(() => {
+    const channelsToShow = [];
+    const favoriteChannelIds: { [key: string]: boolean } = {};
+    for (const channel of favoriteChannels as Channel[]) {
+      channelsToShow.push(channel);
+      favoriteChannelIds[channel.id] = true;
+    };
+    for (const channel of channels as Channel[]) {
+      if (!favoriteChannelIds[channel.id]) {
+        channelsToShow.push(channel);
+      }
+    };
+    return searchTerm
+      ? channelsToShow.filter(channel =>
+        channel.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+      : channelsToShow;
+  }, [searchTerm, channels, favoriteChannels]);
 
   return (
     <aside className={`${styles['sidebar']} ${className || ''}`}>
@@ -153,7 +150,7 @@ export default function Sidebar({
       <div className={`${styles['content']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}>
         <div className={`${styles['button-list']} ${styles[`${isOpen ? 'open' : ''}`]} ${styles[`${searchTerm.length > 0 || selectedType === 'Radio' ? 'searching' : ''}`]}`}>
           <ButtonList
-            channels={channelsToShow}
+            channels={filteredChannels}
             channelSelected={channelSelected}
             onHandleChannel={onHandleChannel}
             selectedType={selectedType}
