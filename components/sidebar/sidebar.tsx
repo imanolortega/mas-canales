@@ -151,7 +151,7 @@ export default function Sidebar({
         </div>
       </div>
       <div className={`${styles['content']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}>
-        <div className={`${styles['button-list']} ${styles[`${isOpen ? 'open' : ''}`]} ${styles[`${searchTerm.length > 0 || filteredChannels.length < 10 ? 'searching' : ''}`]}`}>
+        <div className={`${styles['button-list']} ${styles[`${isOpen ? 'open' : ''}`]} ${styles[`${searchTerm.length > 0 || selectedType === 'Radio' ? 'searching' : ''}`]}`}>
           <ButtonList
             channels={channelsToShow}
             channelSelected={channelSelected}

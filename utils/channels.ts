@@ -121,6 +121,18 @@ export const channels = [
     name: 'Canal 8 (San Juan)',
     type: 'TV'
   },
+  {
+    favorite: false,
+    id: 'X7TUA_R1mCc',
+    name: 'Rock & Pop 95.9',
+    type: 'Radio',
+  },
+  {
+    favorite: false,
+    id: 'lJEQxgRqkQU',
+    name: 'Cadena Heat 91.9',
+    type: 'Radio',
+  }
 ];
 
 orderAlphabetically(channels);
