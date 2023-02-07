@@ -1,5 +1,5 @@
 export interface Channel {
-  favorite?: boolean;
+  favorite: boolean;
   id: string;
   name: string;
   type: string;
