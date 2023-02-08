@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styles from './Index.module.scss'
 
 import { channels } from '@utils/channels'
@@ -9,7 +8,7 @@ import YouTubeVideo from '@components/youtube-video/youtube-video'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 
 export default function Home() {
-  const [channelSelected, setChannelSelected] = useLocalStorage('channelSlected', channels[0])
+  const [channelSelected, setChannelSelected] = useLocalStorage('channelSlected', channels[0]);
   return (
     <>
       <HeadComponent />
