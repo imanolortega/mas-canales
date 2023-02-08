@@ -1,8 +1,8 @@
 @import 'styles/config/_colors.scss';
 
 .sidebar {
-  display: grid;
-  grid-template-rows: 10% 7% 6% 65% 12%;
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
   max-height: 100vh;
 
@@ -19,6 +19,15 @@
     }
   }
 
+  /* Second Row */
+  .search-container {
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 1500px) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
   /* Second Row Sidebar Close */
   .search-btn-container {
     display: flex;
@@ -26,6 +35,7 @@
     height: 45px;
     transition: display 3s linear;
     display: block;
+    margin-bottom: 1rem;
 
     &.open {
       display: none;
@@ -46,6 +56,15 @@
       &:hover {
         background: $purple;
       }
+    }
+  }
+
+  /* Third Row */
+  .selects-container {
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 1500px) {
+      margin-bottom: 0.5rem;
     }
   }
 

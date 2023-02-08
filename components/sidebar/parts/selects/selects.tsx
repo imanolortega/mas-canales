@@ -28,7 +28,7 @@ export default function Selects({
   ]
 
   return (
-    <div className={`${styles['selects-container']} ${!isOpen && styles['closed']}`}>
+    <div className={`${styles['selects-container-inner']} ${!isOpen && styles['closed']}`}>
       {
         buttons.map((button) => (
           <Button

@@ -13,7 +13,6 @@ import styles from './Sidebar.module.scss';
 import ArrowLeft from '@components/icons/arrow-left';
 import Button from '@components/buttons/button';
 import ButtonList from '@components/button-list/button-list';
-import CloseIcon from '@components/icons/close';
 import Logo from '@components/logo/logo';
 import SearchIcon from '@components/icons/search';
 import Selects from './parts/selects/selects';
@@ -91,7 +90,7 @@ export default function Sidebar({
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
-      <div>
+      <div className={styles['search-container']}>
         <Search
           inputRef={inputRef}
           isOpen={isOpen}
@@ -110,7 +109,7 @@ export default function Sidebar({
           )}
         </div>
       </div>
-      <div>
+      <div className={styles['selects-container']}>
         <Selects
           isOpen={isOpen}
           selectedType={selectedType}

@@ -22,7 +22,7 @@ export default function Search(
 ) {
   return (
     <form
-      className={`${styles['search-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}
+      className={`${styles['search-container-inner']} ${styles[`${isOpen ? 'open' : ''}`]}`}
     >
       <input
         onChange={e => setSearchTerm(e.target.value)}
