@@ -1,8 +1,8 @@
-import StarOutline from '@components/icons/star-outline';
-import StarSolid from '@components/icons/star-solid';
 import { Channel } from '@utils/types';
 import { Dispatch, SetStateAction } from 'react';
-import styles from './ButtonList.module.scss'
+import StarOutline from '@components/icons/star-outline';
+import StarSolid from '@components/icons/star-solid';
+import styles from './ButtonList.module.scss';
 
 interface ButtonList {
   channels: Array<Channel>;

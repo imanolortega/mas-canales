@@ -2,6 +2,7 @@ import { Channel } from '@utils/types';
 import { Dispatch, SetStateAction } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './Sidebar.module.scss';
+import { useLocalStorage } from '@hooks/useLocaleStorage';
 
 import ArrowLeft from '@components/icons/arrow-left';
 import Button from '@components/buttons/button';
@@ -42,24 +43,16 @@ export default function Sidebar({
   };
 
   /* Toggle the favorite channels 🎚️ */
-  const [favoriteChannels, setFavoriteChannels] = useState<Channel[]>([]);
-
-  useEffect(() => {
-    const storedChannels = JSON.parse(localStorage.getItem('favoriteChannels') || '[]');
-    setFavoriteChannels(storedChannels);
-  }, []);
+  const [favoriteChannels, setFavoriteChannels] = useLocalStorage('favoriteChannels', [] as Channel[]);
 
   const toggleFavorite = (channel: Channel) => {
+    const currentChannels = favoriteChannels || [];
     if (channel.favorite) {
-      setFavoriteChannels(favoriteChannels.filter(c => c.id !== channel.id));
+      setFavoriteChannels(currentChannels.filter(c => c.id !== channel.id));
     } else {
-      setFavoriteChannels([...favoriteChannels, { ...channel, favorite: true }]);
+      setFavoriteChannels([...currentChannels, { ...channel, favorite: true }]);
     }
   };
-
-  useEffect(() => {
-    localStorage.setItem('favoriteChannels', JSON.stringify(favoriteChannels));
-  }, [favoriteChannels]);
 
   /* Filtering the channels 🔍 */
   const [searchTerm, setSearchTerm] = useState('');
