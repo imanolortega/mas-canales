@@ -1,8 +1,14 @@
 import { Channel } from '@utils/types';
-import { Dispatch, SetStateAction } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import styles from './Sidebar.module.scss';
+import { updateChannels } from '@utils/common';
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useRef,
+  useState } from 'react';
 import { useLocalStorage } from '@hooks/useLocaleStorage';
+import styles from './Sidebar.module.scss';
 
 import ArrowLeft from '@components/icons/arrow-left';
 import Button from '@components/buttons/button';
@@ -61,6 +67,7 @@ export default function Sidebar({
   const filteredChannels = useMemo(() => {
     const channelsToShow = [];
     const favoriteChannelIds: { [key: string]: boolean } = {};
+    setFavoriteChannels(updateChannels(favoriteChannels, channels));
     for (const channel of favoriteChannels as Channel[]) {
       channelsToShow.push(channel);
       favoriteChannelIds[channel.id] = true;
