@@ -56,7 +56,7 @@ export default function Sidebar({
 
   /* Filtering the channels 🔍 */
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedType, setSelectedType] = useState('all');
+  const [selectedType, setSelectedType] = useLocalStorage('channelType', 'all'); //useState('all');
 
   const filteredChannels = useMemo(() => {
     const channelsToShow = [];

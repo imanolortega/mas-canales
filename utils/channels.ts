@@ -9,7 +9,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: '-LzhXjAeApw',
+    id: 'vBNhvJ-MGG8',
     name: 'C5N',
     type: 'TV'
   },
@@ -51,7 +51,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'rI5aucf1vYY',
+    id: 'oA0H1_nQHw4',
     name: 'Telefé (Córdoba)',
     type: 'TV'
   },
@@ -87,7 +87,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'F1Zvz_vvh4g',
+    id: '4ZIBeb72aTY',
     name: 'La 100',
     type: 'Radio'
   },
@@ -123,7 +123,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'X7TUA_R1mCc',
+    id: 'sBania9szVU',
     name: 'Rock & Pop 95.9',
     type: 'Radio',
   },
