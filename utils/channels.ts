@@ -9,7 +9,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'vBNhvJ-MGG8',
+    id: 'sV6nLwr-txA',
     name: 'C5N',
     type: 'TV'
   },

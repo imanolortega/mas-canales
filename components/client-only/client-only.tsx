@@ -1,3 +1,5 @@
+//Client Only: Component to prevent rehydration issues
+
 import { FC, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
 
 interface Props {
