@@ -1,5 +1,5 @@
 import Button from '@components/buttons/button';
-import styles from './Selects.module.scss';
+import styles from './selects.module.scss';
 import { Dispatch, SetStateAction } from "react";
 
 interface Selects {
