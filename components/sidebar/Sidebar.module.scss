@@ -1,9 +1,11 @@
 @import 'styles/config/_colors.scss';
+@import 'styles/config/variables.scss';
+@import 'styles/config/mixins.scss';
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: $gap-x3;
   max-height: 100vh;
 
   /* First Row */
@@ -12,7 +14,7 @@
     justify-content: center;
     align-items: center;
     height: 45px;
-    margin-bottom: 2rem;
+    margin-bottom: $gap-x4;
 
     image {
       width: 150px;
@@ -21,10 +23,10 @@
 
   /* Second Row */
   .search-container {
-    margin-bottom: 1rem;
+    margin-bottom: $gap-x2;
 
-    @media screen and (max-width: 1500px) {
-      margin-bottom: 0.5rem;
+    @include medium {
+      margin-bottom: $gap;
     }
   }
 
@@ -35,7 +37,7 @@
     height: 45px;
     transition: display 3s linear;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: $gap-x2;
 
     &.open {
       display: none;
@@ -50,7 +52,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.25rem;
+      padding: $gap-special;
       cursor: pointer;
 
       &:hover {
@@ -61,10 +63,10 @@
 
   /* Third Row */
   .selects-container {
-    margin-bottom: 1rem;
+    margin-bottom: $gap-x2;
 
-    @media screen and (max-width: 1500px) {
-      margin-bottom: 0.5rem;
+    @include medium {
+      margin-bottom: $gap;
     }
   }
 
@@ -81,7 +83,7 @@
       width: 45px;
     }
 
-    @media screen and (max-width: 1500px) {
+    @include medium {
       width: 15rem;
     }
 
@@ -95,7 +97,7 @@
         display: block;
       }
 
-      @media screen and (max-width: 1500px) {
+      @include medium {
         height: 500px;
       }
     }
@@ -118,7 +120,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.25rem;
+      padding: $gap-special;
       cursor: pointer;
       right: 0rem;
       bottom: 0rem;
@@ -137,6 +139,5 @@
         transform: rotate(180deg);
       }
     }
-
   }
 }

@@ -1,18 +1,19 @@
 @import 'styles/config/_colors.scss';
+@import 'styles/config/variables.scss';
 
 .selects-container-inner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0.5rem;
+  grid-gap: $gap;
 
   .button {
     color: $snow;
     background: $btn-background;
     border: none;
-    border-radius: 0.6rem;
-    padding: 0.5rem;
+    border-radius: $radius;
+    padding: $gap;
     font-family: 'Rubik';
-    font-size: 1rem;
+    font-size: $normal;
     cursor: pointer;
 
     &:hover {

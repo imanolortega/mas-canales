@@ -1,4 +1,5 @@
 @import 'styles/config/_colors.scss';
+@import '@styles/config/variables.scss';
 
 .video-container {
   height: 100%;
@@ -6,8 +7,8 @@
   .title-container{
     display: flex;
     justify-content: space-between;
-    padding-left: 0.5rem;
-    margin-bottom: 1rem;
+    padding-left: $gap;
+    margin-bottom: $gap-x2;
   }
 
   .title {
@@ -18,10 +19,10 @@
     span::before {
       content: "";
       position: absolute;
-      top: 0.9rem;
+      top: $small;
       width: 100%;
       left: 0;
-      height: 1rem;
+      height: $gap-x2;
       background: $purple;
       z-index: -1;
     }
@@ -30,7 +31,7 @@
   .buttons-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: $gap;
 
     .btn {
       background: $btn-background;
@@ -42,7 +43,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.25rem;
+      padding: $gap-special;
       cursor: pointer;
 
       &:hover {
@@ -52,11 +53,11 @@
   }
 
   .video {
-    height: calc(100% - 0.6rem);
+    height: calc(100% - $gap);
     iframe {
       border: none;
-      border-radius: 0.8rem;
-      height: calc(100% - 2.5rem);
+      border-radius: $radius-x1;
+      height: calc(100% - $gap-x5);
       width: 100%;
     }
   }

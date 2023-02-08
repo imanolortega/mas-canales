@@ -1,0 +1,15 @@
+/* Breakpoints */
+$medium: 1500px;
+$mobile: 620px;
+
+@mixin medium {
+  @media screen and (max-width: $medium) {
+      @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+      @content;
+  }
+}
