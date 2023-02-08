@@ -6,9 +6,10 @@ import { channels } from '@utils/channels'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@components/sidebar/sidebar'
 import YouTubeVideo from '@components/youtube-video/youtube-video'
+import { useLocalStorage } from '@hooks/useLocaleStorage'
 
 export default function Home() {
-  const [channelSelected, setChannelSelected] = useState(channels[0])
+  const [channelSelected, setChannelSelected] = useLocalStorage('channelSlected', channels[0])
   return (
     <>
       <HeadComponent />
