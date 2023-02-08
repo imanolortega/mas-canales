@@ -140,6 +140,7 @@
     }
 
     .button-list {
+      cursor: pointer;
       transition: display 0.3s linear;
       display: none;
       height: 600px;
