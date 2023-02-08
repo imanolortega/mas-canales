@@ -1,0 +1,30 @@
+@import 'styles/config/_colors.scss';
+
+.selects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+
+  .button {
+    color: $snow;
+    background: $btn-background;
+    border: none;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+    font-family: 'Rubik';
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: $purple;
+    }
+  }
+
+  .active {
+    background: $purple;
+  }
+
+  &.closed {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+@import 'styles/config/_colors.scss';
+
+.search-container {
+  position: relative;
+  transition: display 3s linear;
+  display: none;
+
+  &.open {
+    display: block;
+  }
+
+  input {
+    background: $btn-background;
+    border: none;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    width: 100%;
+    font-family: 'Rubik';
+    font-size: 1rem;
+
+    &::-webkit-input-placeholder {
+      font-family: 'Rubik';
+      font-size: 1rem;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 0.95rem;
+    right: 0.8rem;
+  }
+
+  .close-btn {
+    background: transparent;
+    position: absolute;
+    top: 0.9rem;
+    right: 0.5rem;
+
+    svg {
+      position: static;
+    }
+  }
+}

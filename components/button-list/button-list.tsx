@@ -23,7 +23,7 @@ export default function ButtonList({
       {channels.map((channel) => (
         <>
           {
-            (channel.type === selectedType || selectedType === 'all') &&
+            (channel.type === selectedType || selectedType === 'Todos') &&
             (<button
               key={channel.id}
               className={`${styles['channel']} ${channelSelected.id === channel.id ? styles['active'] : ''}`}

@@ -16,6 +16,8 @@ import ButtonList from '@components/button-list/button-list';
 import CloseIcon from '@components/icons/close';
 import Logo from '@components/logo/logo';
 import SearchIcon from '@components/icons/search';
+import Selects from './parts/selects/selects';
+import Search from './parts/search/search';
 interface Sidebar {
   className?: string;
   channels: Array<Channel>;
@@ -62,7 +64,7 @@ export default function Sidebar({
 
   /* Filtering the channels 🔍 */
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedType, setSelectedType] = useLocalStorage('channelType', 'all'); //useState('all');
+  const [selectedType, setSelectedType] = useLocalStorage('channelType', 'Todos');
 
   const filteredChannels = useMemo(() => {
     const channelsToShow = [];
@@ -90,26 +92,12 @@ export default function Sidebar({
         <Logo isOpen={isOpen} />
       </div>
       <div>
-        <form
-          className={`${styles['search-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}
-        >
-          <input
-            onChange={e => setSearchTerm(e.target.value)}
-            placeholder="Buscar canal"
-            ref={inputRef}
-            type="text"
-            value={searchTerm}
-          />
-          {!searchTerm && <SearchIcon className={styles['search-btn']} />}
-          {searchTerm && (
-            <Button
-              className={styles['close-btn']}
-              onHandleClick={() => setSearchTerm('')}
-              title="Borrar búsqueda"
-            >
-              <CloseIcon />
-            </Button>)}
-        </form>
+        <Search
+          inputRef={inputRef}
+          isOpen={isOpen}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
         <div className={`${styles['search-btn-container']} ${styles[`${isOpen ? 'open' : ''}`]}`}>
           {!isOpen && (
             <Button
@@ -123,29 +111,11 @@ export default function Sidebar({
         </div>
       </div>
       <div>
-        <div className={`${styles['selects-container']} ${!isOpen && styles['closed']}`}>
-          <Button
-            className={`${styles['button']} ${selectedType === 'TV' ? styles['active'] : ''}`}
-            onHandleClick={() => setSelectedType('TV')}
-            title="Canales de TV"
-          >
-            TV
-          </Button>
-          <Button
-            className={`${styles['button']} ${selectedType === 'Radio' ? styles['active'] : ''}`}
-            onHandleClick={() => setSelectedType('Radio')}
-            title="Canales de Radio"
-          >
-            Radio
-          </Button>
-          <Button
-            className={`${styles['button']} ${selectedType === 'all' ? styles['active'] : ''}`}
-            onHandleClick={() => setSelectedType('all')}
-            title="Todos los Canales"
-          >
-            Todos
-          </Button>
-        </div>
+        <Selects
+          isOpen={isOpen}
+          selectedType={selectedType}
+          setSelectedType={setSelectedType}
+        />
       </div>
       <div className={`${styles['content']} ${styles[`${isOpen ? 'open' : 'closed'}`]}`}>
         <div className={`${styles['button-list']} ${styles[`${isOpen ? 'open' : ''}`]} ${styles[`${searchTerm.length > 0 || selectedType === 'Radio' ? 'searching' : ''}`]}`}>
