@@ -1,15 +1,25 @@
 @import 'styles/config/_colors.scss';
 @import 'styles/config/variables.scss';
+@import 'styles/config/mixins.scss';
 
 .main {
   display: flex;
   max-height: 100vh;
   overflow: hidden;
 
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .video {
     height: 100vh;
     background-color: $site-background-alternative;
     flex: 1;
     padding: $gap-x3;
+
+    @include mobile {
+      height: 90vh;
+    }
   }
 }

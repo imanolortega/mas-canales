@@ -1,0 +1,14 @@
+@import 'styles/config/_colors.scss';
+@import 'styles/config/variables.scss';
+
+.about {
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $gap-x3;
+  }
+  a {
+    color: $green;
+  }
+}

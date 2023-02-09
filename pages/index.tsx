@@ -7,12 +7,15 @@ import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@components/sidebar/sidebar'
 import YouTubeVideo from '@components/youtube-video/youtube-video'
+import { useState } from 'react'
 
 export default function Home() {
   const [channelSelected, setChannelSelected] = useLocalStorage(
     'channelSlected',
     channels[0]
   )
+  const [isModalInformationOpen, setIsModalInformationOpen] = useState(false)
+  const [isModalSearchOpen, setIsModalSearchOpen] = useState(false)
   return (
     <>
       <ClientOnly>
@@ -28,17 +31,20 @@ export default function Home() {
           <Sidebar
             channels={channels}
             channelSelected={channelSelected}
+            isModalOpen={isModalInformationOpen}
             onHandleChannel={setChannelSelected}
+            onHandleModal={setIsModalInformationOpen}
           />
           <div className={styles['video']}>
             <YouTubeVideo
+              isModalOpen={isModalSearchOpen}
+              onHandleModal={setIsModalSearchOpen}
               title={channelSelected.name}
               videoId={channelSelected.id}
             />
           </div>
         </main>
       </ClientOnly>
-      <footer></footer>
     </>
   )
 }

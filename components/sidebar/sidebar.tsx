@@ -18,18 +18,25 @@ import Logo from '@components/logo/logo'
 import SearchIcon from '@components/icons/search'
 import Selects from './parts/selects/selects'
 import Search from './parts/search/search'
+import Modal from '@components/modal/modal'
+import About from '@components/modal/modal-contents/about'
+import Info from '@components/icons/info'
 interface Sidebar {
   className?: string
   channels: Array<Channel>
   channelSelected: Channel
+  isModalOpen: boolean
   onHandleChannel: Dispatch<SetStateAction<Channel>>
+  onHandleModal: Dispatch<SetStateAction<boolean>>
 }
 
 export default function Sidebar({
   className,
   channels,
+  isModalOpen,
   channelSelected,
   onHandleChannel,
+  onHandleModal,
 }: Sidebar) {
   /* Focus the input 🔦 */
   const [isSearchOpen, setIsSearchOpen] = useState(0)
@@ -98,6 +105,11 @@ export default function Sidebar({
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
+      {isModalOpen && (
+        <Modal toggle={onHandleModal}>
+          <About />
+        </Modal>
+      )}
       <div className={styles['search-container']}>
         <Search
           inputRef={inputRef}
@@ -156,6 +168,15 @@ export default function Sidebar({
         </div>
       </div>
       <div className={styles['arrow-btn-container']}>
+        {isOpen && (
+          <Button
+            className={`${styles['information']}`}
+            onHandleClick={() => onHandleModal(true)}
+            title="Información"
+          >
+            Más info
+          </Button>
+        )}
         <Button
           className={`${styles['btn']} ${
             isOpen ? styles['open'] : styles['closed']

@@ -1,5 +1,6 @@
 @import 'styles/config/_colors.scss';
 @import '@styles/config/variables.scss';
+@import '@styles/config/mixins.scss';
 
 .video-container {
   height: 100%;
@@ -52,6 +53,10 @@
     }
   }
 
+  .channels-btn {
+    display: none;
+  }
+
   .video {
     height: calc(100% - $gap);
     iframe {
@@ -59,6 +64,24 @@
       border-radius: $radius-x1;
       height: calc(100% - $gap-x5);
       width: 100%;
+    }
+  }
+
+  @include mobile {
+    .buttons-container {
+      grid-template-columns: 1fr 0.5fr 0.5fr;
+    }
+
+    .channels-btn {
+      display: block;
+      font-family: 'Rubik';
+      font-size: $normal;
+      background: $btn-background;
+      color: $snow;
+      border: none;
+      border-radius: $radius;
+      padding: $gap;
+      cursor: pointer;
     }
   }
 }

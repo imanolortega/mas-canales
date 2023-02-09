@@ -139,5 +139,45 @@
         transform: rotate(180deg);
       }
     }
+
+    .information {
+      color: $snow-dirty;
+      text-decoration: underline;
+      background: transparent;
+      left: 0rem;
+      bottom: 0rem;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $radius;
+      cursor: pointer;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  @include mobile {
+    .logo-container {
+      margin-bottom: 0;
+    }
+
+    .search-container {
+      display: none;
+    }
+
+    .selects-container {
+      display: none;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .arrow-btn-container {
+      display: none;
+    }
   }
 }

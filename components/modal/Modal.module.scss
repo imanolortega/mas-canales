@@ -1,0 +1,55 @@
+@import 'styles/config/_colors.scss';
+@import 'styles/config/variables.scss';
+@import 'styles/config/mixins.scss';
+
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: $gap;
+
+    button {
+      cursor: pointer;
+      color: $snow;
+      background: $btn-background;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $gap-special;
+    }
+  }
+
+  .modal-content {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    max-width: 32rem;
+    min-height: 16rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $site-background;
+    padding: $gap-x2;
+    border-radius: $radius-x1;
+
+    .modal-body {
+      p {
+        color: $snow-dirty;
+        font-weight: 400;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
