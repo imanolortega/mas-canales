@@ -11,7 +11,7 @@ interface Modal {
 
 export default function Modal({ children, title, toggle }: Modal) {
   return (
-    <div className={styles['modal']}>
+    <div className={styles['modal']} onClick={() => toggle(false)}>
       <div className={styles['modal-content']}>
         <div className={styles['modal-header']}>
           <Button
