@@ -20,6 +20,7 @@
 
     @include mobile {
       height: 90vh;
+      background-color: $site-background;
     }
   }
 }
