@@ -1,17 +1,18 @@
 import styles from './Button.module.scss'
 
 interface Button {
-  className?: string;
-  children: React.ReactNode;
-  onHandleClick: () => void;
-  title: string;
+  className?: string
+  children: React.ReactNode
+  onHandleClick: () => void
+  title: string
 }
 
 export default function Button({
   children,
   className,
   onHandleClick,
-  title } : Button) {
+  title,
+}: Button) {
   return (
     <button
       title={title}
@@ -20,8 +21,7 @@ export default function Button({
     >
       {children}
     </button>
-  );
+  )
 }
-
 
 //To-do: Add styles and types...

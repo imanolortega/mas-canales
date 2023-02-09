@@ -12,7 +12,8 @@ export default function Document() {
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
-          rel="stylesheet"></link>
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         <Main />

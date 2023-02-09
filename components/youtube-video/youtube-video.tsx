@@ -1,41 +1,38 @@
-import { useEffect, useState } from 'react';
-import styles from './YouTubeVideo.module.scss';
-import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube';
+import { useEffect, useState } from 'react'
+import styles from './YouTubeVideo.module.scss'
+import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube'
 
-import Pause from '@components/icons/pause';
-import PlayIcon from '@components/icons/play';
-import SoundIcon from '@components/icons/sound';
-import MuteIcon from '@components/icons/mute';
+import Pause from '@components/icons/pause'
+import PlayIcon from '@components/icons/play'
+import SoundIcon from '@components/icons/sound'
+import MuteIcon from '@components/icons/mute'
 
 interface YouTubeVideoProps {
-  title: string;
-  videoId: string;
+  title: string
+  videoId: string
 }
 
-export default function YouTubeVideo({
-  title,
-  videoId }: YouTubeVideoProps) {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
-  const [player, setPlayer] = useState<YouTubePlayer>();
-  const [loading, setLoading] = useState(true);
+export default function YouTubeVideo({ title, videoId }: YouTubeVideoProps) {
+  const [isPlaying, setIsPlaying] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
+  const [player, setPlayer] = useState<YouTubePlayer>()
 
   useEffect(() => {
     if (player) {
-      const currentState = player.getPlayerState();
+      const currentState = player.getPlayerState()
       if (currentState === 1) {
-        setIsPlaying(false);
+        setIsPlaying(false)
       } else {
-        setIsPlaying(true);
+        setIsPlaying(true)
       }
 
       if (player.isMuted()) {
-        setIsMuted(true);
+        setIsMuted(true)
       } else {
-        setIsMuted(false);
+        setIsMuted(false)
       }
     }
-  }, [player, videoId]);
+  }, [player, videoId])
 
   const opts: YouTubeProps['opts'] = {
     height: '390',
@@ -44,40 +41,39 @@ export default function YouTubeVideo({
       allowFullScreen: true,
       autoplay: 1,
       mute: 0,
-      origin: "http://localhost:3000/",
-      //origin: `${process.env.URL_ORIGIN}`,
-    }
-  };
+      origin: 'http://localhost:3000/',
+    },
+  }
 
   const togglePlay = () => {
     if (player) {
-      const currentState = player.getPlayerState();
+      const currentState = player.getPlayerState()
       if (currentState === 1) {
-        setIsPlaying(false);
-        player.pauseVideo();
+        setIsPlaying(false)
+        player.pauseVideo()
       } else {
-        setIsPlaying(true);
-        player.playVideo();
+        setIsPlaying(true)
+        player.playVideo()
       }
     }
-  };
+  }
 
   const toggleMute = () => {
     if (player) {
       if (player.isMuted()) {
-        setIsMuted(false);
-        player.unMute();
+        setIsMuted(false)
+        player.unMute()
       } else {
-        setIsMuted(true);
-        player.mute();
+        setIsMuted(true)
+        player.mute()
       }
     }
-  };
+  }
 
   return (
     <div className={styles['video-container']}>
       <div className={styles['title-container']}>
-        <h3 className={styles['title']} >
+        <h3 className={styles['title']}>
           <span>{title}</span>
         </h3>
         <div className={styles['buttons-container']}>
@@ -107,5 +103,5 @@ export default function YouTubeVideo({
         videoId={videoId}
       />
     </div>
-  );
-};
+  )
+}

@@ -1,27 +1,26 @@
 //Client Only: Component to prevent rehydration issues
 
-import { FC, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import { FC, HTMLAttributes, ReactNode, useEffect, useState } from 'react'
 
 interface Props {
-  children: ReactNode;
+  children: ReactNode
 }
 
-const ClientOnly: FC<Props & HTMLAttributes<HTMLDivElement>> = ({ children, ...delegated }) => {
-  const [hasMounted, setHasMounted] = useState(false);
+const ClientOnly: FC<Props & HTMLAttributes<HTMLDivElement>> = ({
+  children,
+  ...delegated
+}) => {
+  const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
-    setHasMounted(true);
-  }, []);
+    setHasMounted(true)
+  }, [])
 
   if (!hasMounted) {
-    return null;
+    return null
   }
 
-  return (
-    <div {...delegated}>
-      {children}
-    </div>
-  );
-};
+  return <div {...delegated}>{children}</div>
+}
 
-export default ClientOnly;
+export default ClientOnly

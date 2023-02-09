@@ -1,5 +1,5 @@
 interface TwitchChatProps {
-  channel: string;
+  channel: string
 }
 
 export default function TwitchChat({ channel }: TwitchChatProps) {
@@ -8,7 +8,7 @@ export default function TwitchChat({ channel }: TwitchChatProps) {
       src={`https://www.twitch.tv/embed/${channel}/chat?parent=localhost&darkpopout`}
       height="100%"
       width="100%"
-      allowFullScreen>
-    </iframe>
-  );
+      allowFullScreen
+    ></iframe>
+  )
 }
