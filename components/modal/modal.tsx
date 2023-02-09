@@ -23,11 +23,6 @@ export default function Modal({ children, title, toggle }: Modal) {
           </Button>
         </div>
         <div className={styles['modal-body']}>
-          <div className={styles['close-btn-container']}>
-            {/* <button className="close-btn" @click="toggleModal">
-            <CloseIcon />
-          </button> */}
-          </div>
           {title && <h3>{title}</h3>}
           <div>{children}</div>
         </div>
