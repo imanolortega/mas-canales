@@ -5,8 +5,8 @@ import { channels } from '@utils/channels'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
-import Sidebar from '@components/sidebar/sidebar'
-import YouTubeVideo from '@components/youtube-video/youtube-video'
+import Sidebar from '@sections/sidebar/sidebar'
+import YouTubeVideo from '@sections/youtube-video/youtube-video'
 import { useState } from 'react'
 
 export default function Home() {
@@ -35,14 +35,14 @@ export default function Home() {
             onHandleChannel={setChannelSelected}
             onHandleModal={setIsModalInformationOpen}
           />
-          <div className={styles['video']}>
+          <section className={styles['video']}>
             <YouTubeVideo
               isModalOpen={isModalSearchOpen}
               onHandleModal={setIsModalSearchOpen}
               title={channelSelected.name}
               videoId={channelSelected.id}
             />
-          </div>
+          </section>
         </main>
       </ClientOnly>
     </>

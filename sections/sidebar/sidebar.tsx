@@ -13,7 +13,7 @@ import styles from './Sidebar.module.scss'
 
 import ArrowLeft from '@components/icons/arrow-left'
 import Button from '@components/buttons/button'
-import ButtonList from '@components/sidebar/parts/button-list/button-list'
+import ButtonList from '@sections/sidebar/parts/button-list/button-list'
 import Logo from '@components/logo/logo'
 import SearchIcon from '@components/icons/search'
 import Selects from './parts/selects/selects'
