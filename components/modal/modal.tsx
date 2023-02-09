@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 import Button from '@components/buttons/button'
 import CloseIcon from '@components/icons/close'
-import styles from './modal.module.scss'
+import styles from './Modal.module.scss'
 
 interface Modal {
   children: React.ReactNode
