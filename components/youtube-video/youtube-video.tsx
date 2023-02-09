@@ -73,9 +73,9 @@ export default function YouTubeVideo({ title, videoId }: YouTubeVideoProps) {
   return (
     <div className={styles['video-container']}>
       <div className={styles['title-container']}>
-        <h3 className={styles['title']}>
+        <h2 className={styles['title']}>
           <span>{title}</span>
-        </h3>
+        </h2>
         <div className={styles['buttons-container']}>
           <button
             className={styles['btn']}

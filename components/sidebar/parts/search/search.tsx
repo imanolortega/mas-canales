@@ -23,8 +23,18 @@ export default function Search({
       className={`${styles['search-container-inner']} ${
         styles[`${isOpen ? 'open' : ''}`]
       }`}
+      name="channels-search"
     >
+      <label
+        htmlFor="channels-search"
+        style={{
+          display: 'none',
+        }}
+      >
+        Buscador de canales
+      </label>
       <input
+        id="channels-search"
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Buscar canal"
         ref={inputRef}

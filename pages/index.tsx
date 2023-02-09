@@ -18,6 +18,13 @@ export default function Home() {
       <ClientOnly>
         <HeadComponent />
         <main className={styles['main']}>
+          <h1
+            style={{
+              display: 'none',
+            }}
+          >
+            Más Canales en Vivo
+          </h1>
           <Sidebar
             channels={channels}
             channelSelected={channelSelected}
