@@ -18,11 +18,13 @@
 
     &:hover {
       background: $purple;
+      color: $snow;
     }
   }
 
   .active {
-    background: $purple;
+    background: $green;
+    color: $line;
   }
 
   &.closed {
