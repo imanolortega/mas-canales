@@ -32,8 +32,6 @@
   }
 
   .modal-content {
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
     max-width: 32rem;
     min-height: 16rem;
     position: absolute;
@@ -41,7 +39,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: $site-background;
-    padding: $gap-x2;
+    padding: $gap-x2 $gap-x3;
     border-radius: $radius-x1;
 
     .modal-body {

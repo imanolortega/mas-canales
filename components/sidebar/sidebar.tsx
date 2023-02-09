@@ -20,7 +20,6 @@ import Selects from './parts/selects/selects'
 import Search from './parts/search/search'
 import Modal from '@components/modal/modal'
 import About from '@components/modal/modal-contents/about'
-import Info from '@components/icons/info'
 interface Sidebar {
   className?: string
   channels: Array<Channel>
