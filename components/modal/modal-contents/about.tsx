@@ -8,8 +8,8 @@ export default function About() {
         <Logo isOpen={true} />
       </div>
       <p>
-        &quot;Más Canales&quot; es un sitio web que reúne canales de
-        YouTube en vivo, de Argentina y el Mundo, con filtros de TV y Radio y la
+        &quot;Más Canales&quot; es un sitio web que reúne canales de YouTube en
+        vivo, de Argentina y el Mundo, con filtros de TV y Radio y la
         posibilidad de guardar tus canales favoritos.
       </p>
       <p>

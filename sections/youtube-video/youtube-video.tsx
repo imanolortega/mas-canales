@@ -108,7 +108,6 @@ export default function YouTubeVideo({
       </div>
       <YouTube
         className={styles['video']}
-        loading="eager"
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
         onReady={(event) => setPlayer(event.target)}
