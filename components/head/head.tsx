@@ -4,7 +4,7 @@ export default function HeadComponent() {
   const meta = {
     title: 'Más Canales | En Vivo',
     description: 'Canales en vivo de Argentina y el Mundo',
-    image: 'https://mascanales.vercel.app/mas-canales-banner.jpeg',
+    image: 'https://mascanales.net/mas-canales-banner.jpeg',
     type: 'website',
     url: 'https://mascanales.net/',
   }
