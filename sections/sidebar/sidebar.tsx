@@ -205,7 +205,7 @@ export default function Sidebar({
             onHandleClick={() => openModal('about')}
             title="Información"
           >
-            Más info
+            ¿Qué es &quot;Más Canales&quot;?
           </Button>
         )}
         <Button
