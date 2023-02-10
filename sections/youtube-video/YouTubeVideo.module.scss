@@ -59,6 +59,11 @@
 
   .video {
     height: calc(100% - $gap);
+
+    @include mobile {
+      height: 85%;
+    }
+
     iframe {
       border: none;
       border-radius: $radius-x1;
