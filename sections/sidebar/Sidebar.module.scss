@@ -175,6 +175,7 @@
   }
 
   @include mobile {
+    padding: $gap-x2 $gap-x2 0 $gap-x2;
     .logo-container {
       margin-bottom: 0;
     }
