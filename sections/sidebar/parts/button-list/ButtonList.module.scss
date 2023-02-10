@@ -21,6 +21,7 @@
     color: $snow-alternative;
     padding: calc($gap-x2 + 4px) $gap-x2;
     font-family: inherit;
+    font-weight: 400;
     font-size: $normal;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -50,6 +51,7 @@
 
     &:active {
       background-color: $purple;
+      font-weight: 500;
     }
 
     &:first-child {
