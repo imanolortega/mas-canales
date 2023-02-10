@@ -7,9 +7,10 @@ export default function HeadComponent() {
     image: 'https://mascanales.vercel.app/mas-canales-banner.jpeg',
     type: 'website',
   }
+
   return (
     <Head>
-      <title>Más Canales | En Vivo</title>
+      <title>{meta.title}</title>
       <meta name="robots" content="follow, index" />
       <meta content={meta.description} name="description" />
       <meta property="og:url" content="https://mascanales.vercel.app/" />

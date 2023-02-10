@@ -1,3 +1,4 @@
+import { ALL, RADIO } from '@utils/constants'
 import { Channel } from '@utils/types'
 import { updateChannels } from '@utils/common'
 import {
@@ -11,15 +12,16 @@ import {
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 import styles from './Sidebar.module.scss'
 
+import About from '@components/modal/modal-contents/about'
 import ArrowLeft from '@components/icons/arrow-left'
 import Button from '@components/buttons/button'
 import ButtonList from '@sections/sidebar/parts/button-list/button-list'
 import Logo from '@components/logo/logo'
+import Modal from '@components/modal/modal'
+import Search from './parts/search/search'
 import SearchIcon from '@components/icons/search'
 import Selects from './parts/selects/selects'
-import Search from './parts/search/search'
-import Modal from '@components/modal/modal'
-import About from '@components/modal/modal-contents/about'
+
 interface Sidebar {
   className?: string
   channels: Array<Channel>
@@ -41,7 +43,6 @@ export default function Sidebar({
   onHandleChannel,
   openModal,
 }: Sidebar) {
-  /* Focus the input 🔦 */
   const [isSearchOpen, setIsSearchOpen] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
   useEffect(() => {
@@ -50,7 +51,6 @@ export default function Sidebar({
     }
   }, [isSearchOpen])
 
-  /* Toggle the sidebar 🎚️ */
   const [isOpen, setOpen] = useState(true)
   const toggle = (type: string) => {
     if (type === 'open') {
@@ -61,7 +61,6 @@ export default function Sidebar({
     }
   }
 
-  /* Toggle the favorite channels 🎚️ */
   const [favoriteChannels, setFavoriteChannels] = useLocalStorage(
     'favoriteChannels',
     [] as Channel[]
@@ -76,12 +75,8 @@ export default function Sidebar({
     }
   }
 
-  /* Filtering the channels 🔍 */
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedType, setSelectedType] = useLocalStorage(
-    'channelType',
-    'Todos'
-  )
+  const [selectedType, setSelectedType] = useLocalStorage('channelType', ALL)
 
   const filteredChannels = useMemo(() => {
     const channelsToShow = []
@@ -182,7 +177,7 @@ export default function Sidebar({
           } ${
             styles[
               `${
-                searchTerm.length > 0 || selectedType === 'Radio'
+                searchTerm.length > 0 || selectedType === RADIO
                   ? 'searching'
                   : ''
               }`
@@ -213,7 +208,7 @@ export default function Sidebar({
             isOpen ? styles['open'] : styles['closed']
           }`}
           onHandleClick={() => toggle('open')}
-          title={`${isOpen ? 'Open' : 'Close'}`}
+          title={`${isOpen ? 'Abrir' : 'Cerrar'}`}
         >
           <ArrowLeft />
         </Button>

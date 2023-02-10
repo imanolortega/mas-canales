@@ -1,5 +1,7 @@
+import { ALL } from '@utils/constants'
 import { Channel } from '@utils/types'
 import { Dispatch, SetStateAction } from 'react'
+
 import StarOutline from '@components/icons/star-outline'
 import StarSolid from '@components/icons/star-solid'
 import styles from './ButtonList.module.scss'
@@ -23,7 +25,7 @@ export default function ButtonList({
     <div className={styles['channels']}>
       {channels.map((channel) => (
         <>
-          {(channel.type === selectedType || selectedType === 'Todos') && (
+          {(channel.type === selectedType || selectedType === ALL) && (
             <button
               key={channel.id}
               className={`${styles['channel']} ${

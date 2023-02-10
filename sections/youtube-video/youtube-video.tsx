@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './YouTubeVideo.module.scss'
 import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube'
 
