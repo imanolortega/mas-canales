@@ -27,7 +27,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'cD-M_gKEevg',
+    id: 'E33UVF4dx7U',
     name: 'Canal 26',
     type: 'TV',
   },
@@ -111,7 +111,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'u9ppSWt7SV8',
+    id: '5cP5KfV4bhA',
     name: 'Radio Rivadavia',
     type: 'Radio',
   },
@@ -123,7 +123,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'sBania9szVU',
+    id: 'Wghe3gGejOo',
     name: 'Rock & Pop 95.9',
     type: 'Radio',
   },
