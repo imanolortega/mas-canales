@@ -17,7 +17,7 @@ export default function Modal({
 }: Modal) {
   return (
     <div className={`${styles['modal']} ${className}`}>
-      <div className={styles['modal-content']}>
+      <div className={`${styles['modal-content']} ${styles['modal-about']}`}>
         <div className={styles['modal-header']}>
           <Button
             className={styles['close-btn']}

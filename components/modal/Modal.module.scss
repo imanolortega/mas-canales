@@ -57,4 +57,11 @@
       }
     }
   }
+
+  .modal-about {
+    @include mobile {
+      width: 80%;
+      min-height: 18rem;
+    }
+  }
 }
