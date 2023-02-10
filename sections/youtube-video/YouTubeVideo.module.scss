@@ -60,15 +60,21 @@
   .video {
     height: calc(100% - $gap);
 
-    @include mobile {
-      height: 85%;
-    }
-
     iframe {
       border: none;
       border-radius: $radius-x1;
       height: calc(100% - $gap-x5);
+
       width: 100%;
+    }
+
+    @include mobile {
+      height: 80%;
+      margin-bottom: $gap-x2;
+
+      iframe {
+        height: 100%;
+      }
     }
   }
 
