@@ -1,3 +1,5 @@
 export const ALL = 'Todos'
 export const RADIO = 'Radio'
 export const TV = 'TV'
+export const ABOUT = 'about'
+export const CHANNELS = 'channels'

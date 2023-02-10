@@ -1,4 +1,4 @@
-import { ALL, RADIO } from '@utils/constants'
+import { ABOUT, ALL, CHANNELS, RADIO } from '@utils/constants'
 import { Channel } from '@utils/types'
 import { updateChannels } from '@utils/common'
 import {
@@ -103,12 +103,12 @@ export default function Sidebar({
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
-      {isModalOpen && modalVersion === 'about' && (
+      {isModalOpen && modalVersion === ABOUT && (
         <Modal closeModal={closeModal}>
           <About />
         </Modal>
       )}
-      {isModalOpen && modalVersion === 'channels' && (
+      {isModalOpen && modalVersion === CHANNELS && (
         <Modal className={styles['modal-channels']} closeModal={closeModal}>
           <div className={styles['modal-search-container']}>
             <Search
@@ -197,7 +197,7 @@ export default function Sidebar({
         {isOpen && (
           <Button
             className={`${styles['information']}`}
-            onHandleClick={() => openModal('about')}
+            onHandleClick={() => openModal(ABOUT)}
             title="Información"
           >
             ¿Qué es &quot;Más Canales&quot;?

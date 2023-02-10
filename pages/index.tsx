@@ -7,6 +7,7 @@ import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@sections/sidebar/sidebar'
 import YouTubeVideo from '@sections/youtube-video/youtube-video'
+import { ABOUT } from '@utils/constants'
 
 export default function Home() {
   const [channelSelected, setChannelSelected] = useLocalStorage(
@@ -14,7 +15,7 @@ export default function Home() {
     channels[0]
   )
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [modalVersion, setModalVersion] = useState('about')
+  const [modalVersion, setModalVersion] = useState(ABOUT)
 
   const openModal = (version: string) => {
     setIsModalOpen(true)
@@ -23,7 +24,7 @@ export default function Home() {
 
   const closeModal = () => {
     setIsModalOpen(false)
-    setModalVersion('about')
+    setModalVersion(ABOUT)
   }
 
   return (

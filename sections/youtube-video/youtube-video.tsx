@@ -1,3 +1,4 @@
+import { ABOUT, CHANNELS } from '@utils/constants'
 import { useEffect, useState } from 'react'
 import styles from './YouTubeVideo.module.scss'
 import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube'
@@ -85,7 +86,7 @@ export default function YouTubeVideo({
         <div className={styles['buttons-container']}>
           <button
             className={styles['channels-btn']}
-            onClick={() => openModal('channels')}
+            onClick={() => openModal(CHANNELS)}
             title="Canales"
           >
             Canales
@@ -117,7 +118,7 @@ export default function YouTubeVideo({
       <div className={styles['footer']}>
         <Button
           className={`${styles['info']}`}
-          onHandleClick={() => openModal('about')}
+          onHandleClick={() => openModal(ABOUT)}
           title="Información"
         >
           ¿Qué es &quot;Más Canales&quot;?
