@@ -6,6 +6,7 @@ export default function HeadComponent() {
     description: 'Canales en vivo de Argentina y el Mundo',
     image: 'https://mascanales.vercel.app/mas-canales-banner.jpeg',
     type: 'website',
+    url: 'https://mascanales.net/',
   }
 
   return (
@@ -13,8 +14,8 @@ export default function HeadComponent() {
       <title>{meta.title}</title>
       <meta name="robots" content="follow, index" />
       <meta content={meta.description} name="description" />
-      <meta property="og:url" content="https://mascanales.vercel.app/" />
-      <link rel="canonical" href="https://mascanales.vercel.app/" />
+      <meta property="og:url" content={meta.url} />
+      <link rel="canonical" href={meta.url} />
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:type" content={meta.type} />
       <meta property="og:site_name" content="Más Canales" />
