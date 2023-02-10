@@ -24,18 +24,22 @@ interface Sidebar {
   className?: string
   channels: Array<Channel>
   channelSelected: Channel
+  closeModal: () => void
   isModalOpen: boolean
+  modalVersion: string
   onHandleChannel: Dispatch<SetStateAction<Channel>>
-  onHandleModal: Dispatch<SetStateAction<boolean>>
+  openModal: (version: string) => void
 }
 
 export default function Sidebar({
-  className,
   channels,
-  isModalOpen,
   channelSelected,
+  className,
+  closeModal,
+  isModalOpen,
+  modalVersion,
   onHandleChannel,
-  onHandleModal,
+  openModal,
 }: Sidebar) {
   /* Focus the input 🔦 */
   const [isSearchOpen, setIsSearchOpen] = useState(0)
@@ -104,9 +108,37 @@ export default function Sidebar({
       <div className={styles['logo-container']}>
         <Logo isOpen={isOpen} />
       </div>
-      {isModalOpen && (
-        <Modal toggle={onHandleModal}>
+      {isModalOpen && modalVersion === 'about' && (
+        <Modal closeModal={closeModal}>
           <About />
+        </Modal>
+      )}
+      {isModalOpen && modalVersion === 'channels' && (
+        <Modal className={styles['modal-channels']} closeModal={closeModal}>
+          <div className={styles['modal-search-container']}>
+            <Search
+              inputRef={inputRef}
+              isOpen={isOpen}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+          </div>
+          <div className={styles['modal-selects-container']}>
+            <Selects
+              isOpen={isOpen}
+              selectedType={selectedType}
+              setSelectedType={setSelectedType}
+            />
+          </div>
+          <div className={styles['modal-list-container']}>
+            <ButtonList
+              channels={filteredChannels}
+              channelSelected={channelSelected}
+              onHandleChannel={onHandleChannel}
+              selectedType={selectedType}
+              toggleFavorite={toggleFavorite}
+            />
+          </div>
         </Modal>
       )}
       <div className={styles['search-container']}>
@@ -170,7 +202,7 @@ export default function Sidebar({
         {isOpen && (
           <Button
             className={`${styles['information']}`}
-            onHandleClick={() => onHandleModal(true)}
+            onHandleClick={() => openModal('about')}
             title="Información"
           >
             Más info

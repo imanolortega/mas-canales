@@ -21,6 +21,21 @@
     }
   }
 
+  .modal-channels {
+    .modal-search-container {
+      margin-bottom: $gap-x2;
+    }
+
+    .modal-selects-container {
+      margin-bottom: $gap-x2;
+    }
+
+    .modal-list-container {
+      height: 22rem;
+      margin-bottom: $gap-x2;
+    }
+  }
+
   /* Second Row */
   .search-container {
     margin-bottom: $gap-x2;

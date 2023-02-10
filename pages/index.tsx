@@ -1,21 +1,33 @@
+import { channels } from '@utils/channels'
+import { useLocalStorage } from '@hooks/useLocaleStorage'
+import { useState } from 'react'
 import styles from './Index.module.scss'
 
-import { channels } from '@utils/channels'
-
-import { useLocalStorage } from '@hooks/useLocaleStorage'
 import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@sections/sidebar/sidebar'
 import YouTubeVideo from '@sections/youtube-video/youtube-video'
-import { useState } from 'react'
 
 export default function Home() {
   const [channelSelected, setChannelSelected] = useLocalStorage(
     'channelSlected',
     channels[0]
   )
-  const [isModalInformationOpen, setIsModalInformationOpen] = useState(false)
-  const [isModalSearchOpen, setIsModalSearchOpen] = useState(false)
+  // const [isModalInformationOpen, setIsModalInformationOpen] = useState(false)
+  // const [isModalSearchOpen, setIsModalSearchOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalVersion, setModalVersion] = useState('about')
+
+  const openModal = (version: string) => {
+    setIsModalOpen(true)
+    setModalVersion(version)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setModalVersion('about')
+  }
+
   return (
     <>
       <ClientOnly>
@@ -31,14 +43,15 @@ export default function Home() {
           <Sidebar
             channels={channels}
             channelSelected={channelSelected}
-            isModalOpen={isModalInformationOpen}
+            closeModal={closeModal}
+            isModalOpen={isModalOpen}
+            modalVersion={modalVersion}
             onHandleChannel={setChannelSelected}
-            onHandleModal={setIsModalInformationOpen}
+            openModal={openModal}
           />
           <section className={styles['video']}>
             <YouTubeVideo
-              isModalOpen={isModalSearchOpen}
-              onHandleModal={setIsModalSearchOpen}
+              openModal={openModal}
               title={channelSelected.name}
               videoId={channelSelected.id}
             />

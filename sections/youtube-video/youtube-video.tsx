@@ -6,18 +6,15 @@ import Pause from '@components/icons/pause'
 import PlayIcon from '@components/icons/play'
 import SoundIcon from '@components/icons/sound'
 import MuteIcon from '@components/icons/mute'
-import Modal from '@components/modal/modal'
 
 interface YouTubeVideoProps {
-  isModalOpen: boolean
-  onHandleModal: Dispatch<SetStateAction<boolean>>
+  openModal: (version: string) => void
   title: string
   videoId: string
 }
 
 export default function YouTubeVideo({
-  isModalOpen,
-  onHandleModal,
+  openModal,
   title,
   videoId,
 }: YouTubeVideoProps) {
@@ -81,18 +78,13 @@ export default function YouTubeVideo({
   return (
     <div className={styles['video-container']}>
       <div className={styles['title-container']}>
-        {isModalOpen && (
-          <Modal toggle={onHandleModal} title='Sobre "Más Canales"'>
-            <p>Elegir canales</p>
-          </Modal>
-        )}
         <h2 className={styles['title']}>
           <span>{title}</span>
         </h2>
         <div className={styles['buttons-container']}>
           <button
             className={styles['channels-btn']}
-            onClick={() => onHandleModal(true)}
+            onClick={() => openModal('channels')}
             title="Canales"
           >
             Canales

@@ -10,12 +10,12 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 10;
 
   .modal-header {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: $gap;
+    margin-bottom: $gap-x2;
 
     button {
       cursor: pointer;
@@ -32,17 +32,22 @@
   }
 
   .modal-content {
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     background-color: $site-backdrop-color;
-    max-width: 32rem;
-    min-height: 16rem;
+    max-width: 42rem;
+    min-height: 18rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: $gap-x2 $gap-x3;
     border-radius: $radius-x1;
+
+    @include medium {
+      max-width: 42rem;
+      min-height: 36rem;
+    }
 
     .modal-body {
       p {
