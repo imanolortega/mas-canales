@@ -72,6 +72,28 @@
     }
   }
 
+  .footer {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      justify-content: center;
+    }
+    .info {
+      padding: 0;
+      font-family: 'Rubik';
+      font-size: $normal;
+      color: $snow-dirty;
+      text-decoration: underline;
+      background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
   @include mobile {
     .buttons-container {
       grid-template-columns: 1fr;

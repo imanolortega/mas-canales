@@ -6,6 +6,7 @@ import Pause from '@components/icons/pause'
 import PlayIcon from '@components/icons/play'
 import SoundIcon from '@components/icons/sound'
 import MuteIcon from '@components/icons/mute'
+import Button from '@components/buttons/button'
 
 interface YouTubeVideoProps {
   openModal: (version: string) => void
@@ -114,6 +115,15 @@ export default function YouTubeVideo({
         opts={opts}
         videoId={videoId}
       />
+      <div className={styles['footer']}>
+        <Button
+          className={`${styles['info']}`}
+          onHandleClick={() => openModal('about')}
+          title="Información"
+        >
+          ¿Qué es &quot;Más Canales&quot;?
+        </Button>
+      </div>
     </div>
   )
 }
