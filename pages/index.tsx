@@ -13,8 +13,6 @@ export default function Home() {
     'channelSlected',
     channels[0]
   )
-  // const [isModalInformationOpen, setIsModalInformationOpen] = useState(false)
-  // const [isModalSearchOpen, setIsModalSearchOpen] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalVersion, setModalVersion] = useState('about')
 
@@ -30,8 +28,8 @@ export default function Home() {
 
   return (
     <>
+      <HeadComponent />
       <ClientOnly>
-        <HeadComponent />
         <main className={styles['main']}>
           <h1
             style={{
