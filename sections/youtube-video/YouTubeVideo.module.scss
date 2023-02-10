@@ -69,7 +69,7 @@
 
   @include mobile {
     .buttons-container {
-      grid-template-columns: 1fr 0.5fr 0.5fr;
+      grid-template-columns: 1fr;
     }
 
     .channels-btn {
@@ -82,6 +82,12 @@
       border-radius: $radius;
       padding: $gap;
       cursor: pointer;
+    }
+
+    .buttons-container {
+      .btn {
+        display: none;
+      }
     }
   }
 }

@@ -44,8 +44,8 @@
     padding: $gap-x2 $gap-x3;
     border-radius: $radius-x1;
 
-    @include medium {
-      max-width: 42rem;
+    @include mobile {
+      width: 80%;
       min-height: 36rem;
     }
 
