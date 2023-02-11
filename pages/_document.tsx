@@ -15,15 +15,11 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
           rel="stylesheet"
         ></link>
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
         <Script
           strategy="beforeInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
-        <Script id="g-analytics" strategy="lazyOnload">
+        <Script id="g-analytics" strategy="beforeInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -33,6 +29,10 @@ export default function Document() {
           });;
         `}
         </Script>
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
       </body>
     </Html>
   )
