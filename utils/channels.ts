@@ -79,12 +79,12 @@ export const channels = [
     name: 'Telefé (Rosario)',
     type: 'TV',
   },
-  {
-    favorite: false,
-    id: 'nF_HAO0A8dc',
-    name: 'Televisión Pública',
-    type: 'TV',
-  },
+  // {
+  //   favorite: false,
+  //   id: 'nF_HAO0A8dc',
+  //   name: 'Televisión Pública',
+  //   type: 'TV',
+  // },
   {
     favorite: false,
     id: '4ZIBeb72aTY',
