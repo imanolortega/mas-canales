@@ -12,7 +12,7 @@ import {
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 import styles from './Sidebar.module.scss'
 
-import About from '@components/modal/modal-contents/about'
+import About from '@components/modal/about/about'
 import ArrowLeft from '@components/icons/arrow-left'
 import Button from '@components/buttons/button'
 import ButtonList from '@sections/sidebar/parts/button-list/button-list'
