@@ -11,7 +11,7 @@ import { ABOUT } from '@utils/constants'
 
 export default function Home() {
   const [channelSelected, setChannelSelected] = useLocalStorage(
-    'channelSlected',
+    'channelSelected',
     channels[0]
   )
   const [isModalOpen, setIsModalOpen] = useState(false)
