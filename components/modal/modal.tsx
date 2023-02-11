@@ -1,5 +1,6 @@
 import Button from '@components/buttons/button'
 import CloseIcon from '@components/icons/close'
+import { MouseEvent } from 'react'
 import styles from './Modal.module.scss'
 
 interface Modal {
@@ -15,9 +16,19 @@ export default function Modal({
   closeModal,
   title,
 }: Modal) {
+  const handleInnerClick = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation()
+  }
+
   return (
-    <div className={`${styles['modal']} ${className}`}>
-      <div className={`${styles['modal-content']} ${styles['modal-about']}`}>
+    <div
+      className={`${styles['modal']} ${className}`}
+      onClick={() => closeModal()}
+    >
+      <div
+        className={`${styles['modal-content']} ${styles['modal-about']}`}
+        onClick={(e) => handleInnerClick(e)}
+      >
         <div className={styles['modal-header']}>
           <Button
             className={styles['close-btn']}
