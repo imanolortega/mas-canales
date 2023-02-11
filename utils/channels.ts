@@ -87,7 +87,7 @@ export const channels = [
   // },
   {
     favorite: false,
-    id: '4ZIBeb72aTY',
+    id: 'ku4fXgZBII0',
     name: 'La 100',
     type: 'Radio',
   },
@@ -121,12 +121,12 @@ export const channels = [
     name: 'Canal 8 (San Juan)',
     type: 'TV',
   },
-  {
-    favorite: false,
-    id: 'Wghe3gGejOo',
-    name: 'Rock & Pop 95.9',
-    type: 'Radio',
-  },
+  // {
+  //   favorite: false,
+  //   id: 'Wghe3gGejOo',
+  //   name: 'Rock & Pop 95.9',
+  //   type: 'Radio',
+  // },
   {
     favorite: false,
     id: 'lJEQxgRqkQU',
