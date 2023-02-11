@@ -1,6 +1,6 @@
 import { ALL } from '@utils/constants'
 import { Channel } from '@utils/types'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, Fragment, SetStateAction } from 'react'
 
 import StarOutline from '@components/icons/star-outline'
 import StarSolid from '@components/icons/star-solid'
@@ -24,10 +24,9 @@ export default function ButtonList({
   return (
     <div className={styles['channels']}>
       {channels.map((channel) => (
-        <>
+        <Fragment key={channel.id}>
           {(channel.type === selectedType || selectedType === ALL) && (
             <button
-              key={channel.id}
               className={`${styles['channel']} ${
                 channelSelected.id === channel.id ? styles['active'] : ''
               }`}
@@ -53,7 +52,7 @@ export default function ButtonList({
               </span>
             </button>
           )}
-        </>
+        </Fragment>
       ))}
     </div>
   )
