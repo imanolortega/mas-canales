@@ -79,12 +79,6 @@ export const channels = [
     name: 'Telefé (Rosario)',
     type: 'TV',
   },
-  // {
-  //   favorite: false,
-  //   id: 'nF_HAO0A8dc',
-  //   name: 'Televisión Pública',
-  //   type: 'TV',
-  // },
   {
     favorite: false,
     id: 'ku4fXgZBII0',
@@ -121,12 +115,6 @@ export const channels = [
     name: 'Canal 8 (San Juan)',
     type: 'TV',
   },
-  // {
-  //   favorite: false,
-  //   id: 'Wghe3gGejOo',
-  //   name: 'Rock & Pop 95.9',
-  //   type: 'Radio',
-  // },
   {
     favorite: false,
     id: 'lJEQxgRqkQU',
