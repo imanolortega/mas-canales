@@ -21,9 +21,8 @@
 
 "Más Canales" is a website that brings together some live YouTube channels, to make accessing and using them easier.
 
-- Front-end: [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), and [SCSS](https://sass-lang.com/) - Repository: [https://github.com/imanolrtega/mas-canales](https://github.com/imanolrtega/mas-canales)
-
-- Back-end: [Node.js](https://nodejs.org/es/)
+- Front-end: [Next.js](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), and [SCSS](https://sass-lang.com/) 
+- Back-end: [Node.js](https://nodejs.org/es/) - Repository: [https://github.com/imanolrtega/mas-canales-api] (https://github.com/imanolrtega/mas-canales-api)
 
 ## Getting Started
 
