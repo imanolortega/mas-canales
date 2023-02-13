@@ -51,7 +51,7 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'oA0H1_nQHw4',
+    id: '3XeGzIObrhk',
     name: 'Telefé (Córdoba)',
     type: 'TV',
   },
@@ -101,12 +101,6 @@ export const channels = [
     favorite: false,
     id: 'sEooidi0EAQ',
     name: 'Cadena 3',
-    type: 'Radio',
-  },
-  {
-    favorite: false,
-    id: '5cP5KfV4bhA',
-    name: 'Radio Rivadavia',
     type: 'Radio',
   },
   {
