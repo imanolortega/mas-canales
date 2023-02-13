@@ -93,8 +93,14 @@ export const channels = [
   },
   {
     favorite: false,
-    id: 'FTX8kavajBo',
+    id: 'WVYSO30FqtY',
     name: 'Radio Mitre',
+    type: 'Radio',
+  },
+  {
+    favorite: false,
+    id: 'EUvgB8uTk4I',
+    name: 'Radio Rivadavia',
     type: 'Radio',
   },
   {
@@ -115,6 +121,12 @@ export const channels = [
     name: 'Cadena Heat 91.9',
     type: 'Radio',
   },
+  {
+    favorite: false,
+    id: 'f9JyfPpheg0',
+    name: 'Urbana Play 104.3',
+    type: 'Radio',
+  }
 ]
 
 orderAlphabetically(channels)
