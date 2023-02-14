@@ -121,12 +121,12 @@ export const channels = [
     name: 'Cadena Heat 91.9',
     type: 'Radio',
   },
-  {
-    favorite: false,
-    id: 'f9JyfPpheg0',
-    name: 'Urbana Play 104.3',
-    type: 'Radio',
-  }
+  // {
+  //   favorite: false,
+  //   id: 'f9JyfPpheg0',
+  //   name: 'Urbana Play 104.3',
+  //   type: 'Radio',
+  // }
 ]
 
 orderAlphabetically(channels)
