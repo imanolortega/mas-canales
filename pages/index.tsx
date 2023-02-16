@@ -1,4 +1,6 @@
-import { channels } from '@utils/channels'
+import { ABOUT, API_URL } from '@utils/constants'
+import { Channel, ChannelOfDatabase } from '@utils/types'
+import { orderAlphabetically } from '@utils/common'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 import { useState } from 'react'
 import styles from './Index.module.scss'
@@ -7,9 +9,14 @@ import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@sections/sidebar/sidebar'
 import YouTubeVideo from '@sections/youtube-video/youtube-video'
-import { ABOUT } from '@utils/constants'
 
-export default function Home() {
+interface Home {
+  channels: Array<Channel>
+}
+
+export default function Home({ channels }: Home) {
+  orderAlphabetically(channels)
+
   const [channelSelected, setChannelSelected] = useLocalStorage(
     'channelSelected',
     channels[0]
@@ -59,4 +66,23 @@ export default function Home() {
       </ClientOnly>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  if (typeof API_URL === 'undefined') {
+    throw new Error('API_URL is not defined')
+  }
+  const res = await fetch(API_URL)
+  const data = await res.json()
+  const channels = data.channels.map((channel: ChannelOfDatabase) => {
+    const newChannel = {
+      favorite: channel.favorite,
+      id: channel.id,
+      name: channel.name,
+      type: channel.type,
+    }
+    return newChannel
+  })
+
+  return { props: { channels: channels } }
 }
