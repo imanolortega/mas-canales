@@ -70,19 +70,17 @@ export default function Home({ channels }: Home) {
 
 export async function getServerSideProps() {
   interface ChannelOfDatabase {
-    'docId': string;
-    'id': string;
-    'name': string;
-    'type': string;
-    'favorite': boolean;
+    docId: string
+    id: string
+    name: string
+    type: string
+    favorite: boolean
   }
 
-  if (typeof API_URL === "undefined") {
-    throw new Error("API_URL is not defined");
+  if (typeof API_URL === 'undefined') {
+    throw new Error('API_URL is not defined')
   }
-  const res = await fetch(
-    API_URL
-  )
+  const res = await fetch(API_URL)
   const data = await res.json()
   const channels = data.channels.map((channel: ChannelOfDatabase) => {
     const newChannel = {
@@ -91,8 +89,8 @@ export async function getServerSideProps() {
       name: channel.name,
       type: channel.type,
     }
-    return newChannel;
-  });
+    return newChannel
+  })
 
   return { props: { channels: channels } }
 }
