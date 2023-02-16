@@ -29,7 +29,7 @@ interface Sidebar {
   closeModal: () => void
   isModalOpen: boolean
   modalVersion: string
-  onHandleChannel: Dispatch<SetStateAction<Channel>>
+  onHandleChannel: (channel: Channel) => void
   openModal: (version: string) => void
 }
 

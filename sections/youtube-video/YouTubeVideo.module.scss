@@ -79,6 +79,20 @@
     }
   }
 
+  .hide-video {
+    display: none;
+  }
+
+  .loading-container {
+    height: calc(100% - 50px);
+    background-color: black;
+    border-radius: $radius-x1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $gap-x5;
+  }
+
   .footer {
     display: none;
 

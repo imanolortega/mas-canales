@@ -10,7 +10,7 @@ interface ButtonList {
   channels: Array<Channel>
   channelSelected: Channel
   selectedType: string
-  onHandleChannel: Dispatch<SetStateAction<Channel>>
+  onHandleChannel: (channel: Channel) => void
   toggleFavorite: (channel: Channel) => void
 }
 

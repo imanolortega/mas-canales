@@ -23,6 +23,12 @@ export default function Home({ channels }: Home) {
   )
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [modalVersion, setModalVersion] = useState(ABOUT)
+  const [loading, setLoading] = useState(true)
+
+  const onHandleChannel = (channel: Channel) => {
+    setChannelSelected(channel)
+    setLoading(true)
+  }
 
   const openModal = (version: string) => {
     setIsModalOpen(true)
@@ -52,12 +58,14 @@ export default function Home({ channels }: Home) {
             closeModal={closeModal}
             isModalOpen={isModalOpen}
             modalVersion={modalVersion}
-            onHandleChannel={setChannelSelected}
+            onHandleChannel={onHandleChannel}
             openModal={openModal}
           />
           <section className={styles['video']}>
             <YouTubeVideo
+              loading={loading}
               openModal={openModal}
+              setLoading={setLoading}
               title={channelSelected.name}
               videoId={channelSelected.id}
             />

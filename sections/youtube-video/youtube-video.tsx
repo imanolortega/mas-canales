@@ -8,15 +8,20 @@ import PlayIcon from '@components/icons/play'
 import SoundIcon from '@components/icons/sound'
 import MuteIcon from '@components/icons/mute'
 import Button from '@components/buttons/button'
+import Loader from '@components/loader/loader'
 
 interface YouTubeVideoProps {
+  loading: boolean
   openModal: (version: string) => void
+  setLoading: (loading: boolean) => void
   title: string
   videoId: string
 }
 
 export default function YouTubeVideo({
+  loading,
   openModal,
+  setLoading,
   title,
   videoId,
 }: YouTubeVideoProps) {
@@ -77,6 +82,11 @@ export default function YouTubeVideo({
     }
   }
 
+  const handleReady = (event: { target: YouTubePlayer }) => {
+    setPlayer(event.target)
+    setLoading(false)
+  }
+
   return (
     <div className={styles['video-container']}>
       <div className={styles['title-container']}>
@@ -107,11 +117,16 @@ export default function YouTubeVideo({
           </button>
         </div>
       </div>
+      {loading && (
+        <div className={styles['loading-container']}>
+          <Loader />
+        </div>
+      )}
       <YouTube
-        className={styles['video']}
+        className={`${styles['video']} ${loading ? styles['hide-video'] : ''}}`}
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
-        onReady={(event) => setPlayer(event.target)}
+        onReady={(event) => handleReady(event.target)}
         opts={opts}
         videoId={videoId}
       />
