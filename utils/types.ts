@@ -4,3 +4,11 @@ export interface Channel {
   name: string
   type: string
 }
+
+export interface ChannelOfDatabase {
+  docId: string
+  id: string
+  name: string
+  type: string
+  favorite: boolean
+}
