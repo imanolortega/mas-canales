@@ -21,7 +21,15 @@ export default function About() {
         >
           Imanol
         </a>
-        .
+        . Si querés enviarme algún comentario o sugerencia, podés hacerlo a{' '}
+        {` `}
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="mailto:imanolrtega@gmail.com"
+        >
+          imanolrtega@gmail.com
+        </a>
       </p>
     </div>
   )
