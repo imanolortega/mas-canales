@@ -126,7 +126,7 @@ export default function YouTubeVideo({
         className={`${styles['video']} ${loading ? styles['hide-video'] : ''}}`}
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
-        onReady={(event) => handleReady(event.target)}
+        onReady={(event) => handleReady(event)}
         opts={opts}
         videoId={videoId}
       />
