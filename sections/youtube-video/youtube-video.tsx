@@ -1,4 +1,4 @@
-import { ABOUT, CHANNELS } from '@utils/constants'
+import { ABOUT, CHANNELS } from '@utils/config'
 import { useEffect, useState } from 'react'
 import styles from './YouTubeVideo.module.scss'
 import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube'

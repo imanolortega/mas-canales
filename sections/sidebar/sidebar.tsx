@@ -1,4 +1,4 @@
-import { ABOUT, ALL, CHANNELS, RADIO } from '@utils/constants'
+import { ABOUT, ALL, CHANNELS, RADIO } from '@utils/config'
 import { Channel } from '@utils/types'
 import { updateChannels } from '@utils/common'
 import { useEffect, useMemo, useRef, useState } from 'react'

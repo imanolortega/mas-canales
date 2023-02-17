@@ -1,4 +1,4 @@
-import { ALL, RADIO, TV } from '@utils/constants'
+import { ALL, RADIO, TV } from '@utils/config'
 import { Dispatch, SetStateAction } from 'react'
 
 import Button from '@components/buttons/button'

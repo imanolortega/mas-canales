@@ -1,4 +1,4 @@
-import { ABOUT, API_URL } from '@utils/constants'
+import { ABOUT, API_URL, REVALIDATE } from '@utils/config'
 import { Channel, ChannelOfDatabase } from '@utils/types'
 import { orderAlphabetically } from '@utils/common'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
@@ -9,6 +9,7 @@ import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@sections/sidebar/sidebar'
 import YouTubeVideo from '@sections/youtube-video/youtube-video'
+import { GetStaticProps } from 'next'
 
 interface Home {
   channels: Array<Channel>
@@ -76,7 +77,7 @@ export default function Home({ channels }: Home) {
   )
 }
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async () => {
   if (typeof API_URL === 'undefined') {
     throw new Error('API_URL is not defined')
   }
@@ -92,5 +93,10 @@ export async function getServerSideProps() {
     return newChannel
   })
 
-  return { props: { channels: channels } }
+  return {
+    props: {
+      channels: channels
+    },
+    revalidate: REVALIDATE, // 12 hours
+  }
 }

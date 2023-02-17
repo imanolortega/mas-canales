@@ -1,4 +1,4 @@
-import { ALL } from '@utils/constants'
+import { ALL } from '@utils/config'
 import { Channel } from '@utils/types'
 import { Fragment } from 'react'
 
