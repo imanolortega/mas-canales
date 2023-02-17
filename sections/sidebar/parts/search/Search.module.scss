@@ -10,6 +10,7 @@
   }
 
   input {
+    color: $snow-dirty;
     background: $btn-background;
     border: none;
     border-radius: 0.8rem;
@@ -25,6 +26,7 @@
   }
 
   svg {
+    color: $snow-dirty;
     position: absolute;
     top: 0.95rem;
     right: 0.8rem;
