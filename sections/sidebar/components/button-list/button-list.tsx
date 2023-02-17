@@ -1,6 +1,6 @@
 import { ALL } from '@utils/constants'
 import { Channel } from '@utils/types'
-import { Dispatch, Fragment, SetStateAction } from 'react'
+import { Fragment } from 'react'
 
 import StarOutline from '@components/icons/star-outline'
 import StarSolid from '@components/icons/star-solid'

@@ -3,7 +3,7 @@ import { Channel, ChannelOfDatabase } from '@utils/types'
 import { orderAlphabetically } from '@utils/common'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 import { useState } from 'react'
-import styles from './Index.module.scss'
+import styles from "@styles/Index.module.scss"
 
 import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'

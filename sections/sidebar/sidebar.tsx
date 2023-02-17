@@ -2,8 +2,6 @@ import { ABOUT, ALL, CHANNELS, RADIO } from '@utils/constants'
 import { Channel } from '@utils/types'
 import { updateChannels } from '@utils/common'
 import {
-  Dispatch,
-  SetStateAction,
   useEffect,
   useMemo,
   useRef,
@@ -15,12 +13,12 @@ import styles from './Sidebar.module.scss'
 import About from '@components/modal/about/about'
 import ArrowLeft from '@components/icons/arrow-left'
 import Button from '@components/buttons/button'
-import ButtonList from '@sections/sidebar/parts/button-list/button-list'
+import ButtonList from '@sections/sidebar/components/button-list/button-list'
 import Logo from '@components/logo/logo'
 import Modal from '@components/modal/modal'
-import Search from './parts/search/search'
+import Search from './components/search/search'
 import SearchIcon from '@components/icons/search'
-import Selects from './parts/selects/selects'
+import Selects from './components/selects/selects'
 
 interface Sidebar {
   className?: string
