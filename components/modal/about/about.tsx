@@ -17,7 +17,7 @@ export default function About() {
         <a
           rel="noopener noreferrer"
           target="_blank"
-          href="https://github.com/imanolrtega"
+          href="https://imanolortega.dev/"
         >
           Imanol
         </a>
@@ -26,9 +26,9 @@ export default function About() {
         <a
           rel="noopener noreferrer"
           target="_blank"
-          href="mailto:imanolrtega@gmail.com"
+          href="mailto:imanolotega.dev@gmail.com"
         >
-          imanolrtega@gmail.com
+          imanolotega.dev@gmail.com
         </a>
       </p>
     </div>
