@@ -1,8 +1,6 @@
-interface CloseIcon {
-  width?: number
-  height?: number
-}
-export default function CloseIcon({ width, height }: CloseIcon) {
+import { CloseIconProps } from '@utils/types'
+
+export default function CloseIcon({ width, height }: CloseIconProps) {
   return (
     <svg
       height={height || 15}

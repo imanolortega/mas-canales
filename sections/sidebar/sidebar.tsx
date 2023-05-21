@@ -1,5 +1,5 @@
 import { ABOUT, ALL, CHANNELS, RADIO } from '@utils/config'
-import { Channel } from '@utils/types'
+import { Channel, SidebarProps } from '@utils/types'
 import { updateChannels } from '@utils/common'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
@@ -15,17 +15,6 @@ import Search from './components/search/search'
 import SearchIcon from '@components/icons/search'
 import Selects from './components/selects/selects'
 
-interface Sidebar {
-  className?: string
-  channels: Array<Channel>
-  channelSelected: Channel
-  closeModal: () => void
-  isModalOpen: boolean
-  modalVersion: string
-  onHandleChannel: (channel: Channel) => void
-  openModal: (version: string) => void
-}
-
 export default function Sidebar({
   channels,
   channelSelected,
@@ -35,7 +24,7 @@ export default function Sidebar({
   modalVersion,
   onHandleChannel,
   openModal,
-}: Sidebar) {
+}: SidebarProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
   useEffect(() => {

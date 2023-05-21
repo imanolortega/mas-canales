@@ -1,18 +1,12 @@
+import { ButtonProps } from '@utils/types'
 import styles from './Button.module.scss'
-
-interface Button {
-  className?: string
-  children: React.ReactNode
-  onHandleClick: () => void
-  title: string
-}
 
 export default function Button({
   children,
   className,
   onHandleClick,
   title,
-}: Button) {
+}: ButtonProps) {
   return (
     <button
       title={title}

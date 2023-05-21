@@ -1,23 +1,16 @@
-import { Dispatch, RefObject, SetStateAction } from 'react'
+import { SearchProps } from '@utils/types'
 import styles from './Search.module.scss'
 
 import Button from '@components/buttons/button'
 import CloseIcon from '@components/icons/close'
 import SearchIcon from '@components/icons/search'
 
-interface Search {
-  isOpen: boolean
-  searchTerm: string
-  setSearchTerm: Dispatch<SetStateAction<string>>
-  inputRef: RefObject<HTMLInputElement>
-}
-
 export default function Search({
   inputRef,
   isOpen,
   searchTerm,
   setSearchTerm,
-}: Search) {
+}: SearchProps) {
   return (
     <form
       className={`${styles['search-container-inner']} ${

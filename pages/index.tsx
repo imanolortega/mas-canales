@@ -1,5 +1,6 @@
 import { ABOUT, API_URL, REVALIDATE } from '@utils/config'
 import { Channel, ChannelOfDatabase } from '@utils/types'
+import { GetStaticProps } from 'next'
 import { orderAlphabetically } from '@utils/common'
 import { useLocalStorage } from '@hooks/useLocaleStorage'
 import { useState } from 'react'
@@ -9,7 +10,6 @@ import ClientOnly from '@components/client-only/client-only'
 import HeadComponent from '@components/head/head'
 import Sidebar from '@sections/sidebar/sidebar'
 import YouTubeVideo from '@sections/youtube-video/youtube-video'
-import { GetStaticProps } from 'next'
 
 interface Home {
   channels: Array<Channel>
@@ -95,7 +95,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      channels: channels
+      channels: channels,
     },
     revalidate: REVALIDATE, // 12 hours
   }

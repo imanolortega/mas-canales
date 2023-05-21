@@ -1,20 +1,14 @@
 import { ALL, RADIO, TV } from '@utils/config'
-import { Dispatch, SetStateAction } from 'react'
+import { SelectsProps } from '@utils/types'
 
 import Button from '@components/buttons/button'
 import styles from './selects.module.scss'
-
-interface Selects {
-  isOpen: boolean
-  selectedType: string
-  setSelectedType: Dispatch<SetStateAction<string>>
-}
 
 export default function Selects({
   isOpen,
   selectedType,
   setSelectedType,
-}: Selects) {
+}: SelectsProps) {
   const buttons = [
     {
       title: 'Canales de TV',

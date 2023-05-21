@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write '**/*.{ts,tsx}'"
+    "format": "prettier --ignore-path .gitignore --write '**/*.{ts,tsx}'"
   },
   "dependencies": {
     "@next/font": "^13.1.6",

@@ -1,10 +1,10 @@
-interface Sidebar {
-  className?: string
-  width?: number
-  height?: number
-}
+import { SearchIconProps } from '@utils/types'
 
-export default function SearchIcon({ className, width, height }: Sidebar) {
+export default function SearchIcon({
+  className,
+  width,
+  height,
+}: SearchIconProps) {
   return (
     <svg
       className={className}

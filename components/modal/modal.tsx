@@ -2,20 +2,14 @@ import Button from '@components/buttons/button'
 import CloseIcon from '@components/icons/close'
 import { MouseEvent } from 'react'
 import styles from './Modal.module.scss'
-
-interface Modal {
-  className?: string
-  children: React.ReactNode
-  closeModal: () => void
-  title?: string
-}
+import { ModalProps } from '@utils/types'
 
 export default function Modal({
   className,
   children,
   closeModal,
   title,
-}: Modal) {
+}: ModalProps) {
   const handleInnerClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation()
   }

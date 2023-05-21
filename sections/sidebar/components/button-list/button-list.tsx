@@ -1,18 +1,10 @@
 import { ALL } from '@utils/config'
-import { Channel } from '@utils/types'
+import { ButtonListProps } from '@utils/types'
 import { Fragment } from 'react'
 
 import StarOutline from '@components/icons/star-outline'
 import StarSolid from '@components/icons/star-solid'
 import styles from './ButtonList.module.scss'
-
-interface ButtonList {
-  channels: Array<Channel>
-  channelSelected: Channel
-  selectedType: string
-  onHandleChannel: (channel: Channel) => void
-  toggleFavorite: (channel: Channel) => void
-}
 
 export default function ButtonList({
   channels,
@@ -20,7 +12,7 @@ export default function ButtonList({
   selectedType,
   onHandleChannel,
   toggleFavorite,
-}: ButtonList) {
+}: ButtonListProps) {
   return (
     <div className={styles['channels']}>
       {channels.map((channel) => (

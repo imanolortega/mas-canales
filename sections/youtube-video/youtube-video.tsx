@@ -1,5 +1,6 @@
 import { ABOUT, CHANNELS } from '@utils/config'
 import { useEffect, useState } from 'react'
+import { YouTubeVideoProps } from '@utils/types'
 import styles from './YouTubeVideo.module.scss'
 import YouTube, { YouTubePlayer, YouTubeProps } from 'react-youtube'
 
@@ -9,14 +10,6 @@ import SoundIcon from '@components/icons/sound'
 import MuteIcon from '@components/icons/mute'
 import Button from '@components/buttons/button'
 import Loader from '@components/loader/loader'
-
-interface YouTubeVideoProps {
-  loading: boolean
-  openModal: (version: string) => void
-  setLoading: (loading: boolean) => void
-  title: string
-  videoId: string
-}
 
 export default function YouTubeVideo({
   loading,
