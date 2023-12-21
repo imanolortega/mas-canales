@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta name="msvalidate.01" content={process.env.BING_META_TAG} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
