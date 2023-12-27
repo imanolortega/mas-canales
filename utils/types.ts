@@ -28,7 +28,7 @@ export interface Channel {
 }
 
 export interface ChannelOfDatabase {
-  docId: string
+  docId?: string
   id: string
   name: string
   type: string
