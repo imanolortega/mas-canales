@@ -1,10 +1,18 @@
+import { ChannelOfDatabase } from '@utils/types'
 import Head from 'next/head'
 
-export default function HeadComponent() {
+type Channels = {
+  channels: ChannelOfDatabase[]
+}
+
+export default function HeadComponent({ channels }: Channels) {
+  const channelsDescription = channels
+    .map((channel) => `${channel.name}`)
+    .join(', ')
+
   const meta = {
     title: 'Más Canales | En Vivo',
-    description:
-      'Canales en Vivo. Canales de YouTube de Argentina y el Mundo. Transmisiones online.',
+    description: `Canales en Vivo de Argentina. ${channelsDescription}.`,
     image: 'https://mascanales.net/mas-canales-banner.jpeg',
     type: 'website',
     url: 'https://mascanales.net/',

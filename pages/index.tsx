@@ -43,7 +43,7 @@ export default function Home({ channels }: Home) {
 
   return (
     <>
-      <HeadComponent />
+      <HeadComponent channels={channels} />
       <ClientOnly>
         <main className={styles['main']}>
           <h1
